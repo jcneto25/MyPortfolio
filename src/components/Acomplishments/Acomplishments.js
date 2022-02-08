@@ -4,10 +4,13 @@ import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalCompon
 import { Box, Boxes, BoxNum, BoxText } from './AcomplishmentsStyles';
 
 const data = [
-  { number: 20, text: 'Open Source Projects'},
-  { number: 1000, text: 'Students', },
-  { number: 1900, text: 'Github Followers', },
-  { number: 5000, text: 'Github Stars', }
+  { number: 1998, text: 'Certificação Conectiva Linux', },
+  { number: 2000, text: 'Graduado em Informática pela UNIFOR'},
+  { number: 2001, text: 'Especialização em Gerência Estratégica da Informação', },
+  { number: 2003, text: 'MBA Excutivo IBMEC', },
+  { number: 2007, text: 'Treinamentos e participação em projetos em Java', },
+  { number: 2018, text: 'Graduação em Direito', },
+  { number: 2019, text: 'Formação Python na Alura', }
 ];
 
 const Acomplishments = () => (
@@ -16,7 +19,7 @@ const Acomplishments = () => (
     <Boxes>
       {data.map((card, index) => (
         <Box key={index}>
-          <BoxNum>{card.number}+</BoxNum>
+          <BoxNum>Ano {card.number}</BoxNum>
           <BoxText>{card.text}</BoxText>
 
         </Box>

@@ -38,9 +38,11 @@ export const projects = [
 ];
 
 export const TimeLineData = [
-  { year: 2017, text: 'Started my journey', },
-  { year: 2018, text: 'Worked as a freelance developer', },
-  { year: 2019, text: 'Founded JavaScript Mastery', },
-  { year: 2020, text: 'Shared my projects with the world', },
-  { year: 2021, text: 'Started my own platform', },
+  { year: 1996, text: 'Início das minhas atividades em tecnologia como estagiário em provedor de internet', },
+  { year: 1998, text: 'Atuando como administrador de servidor linux em empresa de hospedagem de páginas. Servidor web contratado no modelo Co-location', },
+  { year: 2000, text: 'Atuando no suyporte a sistemas e a infraestrutura junto a empresa BeachPark Hotéis e Turismo', },
+  { year: 2002, text: 'Atuando como analista de Ti  na empresa Construtora LM Ltda', },
+  { year: 2003, text: 'Atuando como Coordenador de Tecnologia em Porto Freire Engenharia', },
+  { year: 2006, text: 'Atuando como desenvolvedor e analista de requisitos na empresa federal Dataprev', },
+  { year: 2012, text: 'Atuando como analista de sistemas junto ao Tribunal de Justiça do Ceará', },
 ];

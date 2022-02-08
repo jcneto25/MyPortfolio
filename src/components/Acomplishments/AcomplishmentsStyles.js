@@ -4,7 +4,7 @@ export const Boxes = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 14px;
   margin: 24px 0 40px;
 
   @media ${props => props.theme.breakpoints.md}{
@@ -49,7 +49,7 @@ export const Box = styled.div`
 export const BoxNum = styled.h5`
   font-style: normal;
   font-weight: 600;
-  font-size: 36px;
+  font-size: 32px;
   line-height: 40px;
   letter-spacing: 0.01em;
   color: #FFFFFF;
