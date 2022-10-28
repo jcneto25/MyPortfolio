@@ -1,11 +1,11 @@
 export const projects = [
   {
-    title: 'MERN Memories',
-    description: "Using React, Node.js, Express & MongoDB you'll learn how to build a Full Stack MERN Application - from start to finish. The App is called Memories and it is a simple social media app that allows users to post interesting events that happened in their lives.",
+    title: 'React/CSS Gym Website',
+    description: "Project based on React, CSS and a few libs. This project was deployed at Vercel. check it out, link below. React is a powerfull library and it uses JSX, a syntax extension to Javascript. JSX allows us to write HTML in React. JSX makes it easier to write and add HTML in React. The project is also complete responsive for mobile devices. ",
       image: '/images/1.png',
-      tags: ['Mongo', 'Express', 'React', 'Node'],
-    source: 'https://google.com',
-    visit: 'https://google.com',
+      tags: ['CSS', 'React', 'Node', 'Javascript'],
+    source: 'https://react-gym-ebon.vercel.app',
+    visit: 'https://react-gym-ebon.vercel.app',
     id: 0,
   },
   {

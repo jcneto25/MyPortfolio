@@ -21,6 +21,7 @@ const Projects = () => (
               {description}
             </CardInfo>
             <div>
+              <span><br></br></span>
               <TitleContent>
                 Stack
               </TitleContent>
@@ -31,7 +32,7 @@ const Projects = () => (
               </TagList>
             </div>
             <UtilityList>
-              <ExternalLinks href={visit}>Code</ExternalLinks>
+              <ExternalLinks href={visit}>Visit</ExternalLinks>
               <ExternalLinks href={visit}>Source</ExternalLinks>
             </UtilityList>
           </BlogCard>
