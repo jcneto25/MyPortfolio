@@ -10,7 +10,7 @@ export const projects = [
   },
   {
     title: 'E-Commerce Bag Store',
-    description:"E-Commerce site builted with React and Material UI. It also uses react hooks such as useState and useContext. It's a responsive site and can be used on different screen sizes. I used Eslint e Prettier on the dev environment setup for this project. CSS was used with styled-components, with independence between the visual effects and the site structure.",
+    description:"E-Commerce site builted with React and Material UI. It also uses react hooks such as useState and useContext. It's a responsive site and can be used on different screen sizes. I used Eslint e Prettier on the dev environment setup for this project. CSS was used with styled-components, it allows visual effects isolation on the project.",
     image: '/images/2.png',
     tags: ['React', 'JavaScript', 'Material UI', 'Vite'],
     source: 'https://bag-store.vercel.app',
