@@ -18,12 +18,12 @@ export const projects = [
     id: 1,
   },
   {
-    title: 'WebRTC App',
-    description: "This is a code repository for the corresponding YouTube video. In this tutorial, we're going to build and deploy a React Video Chat Application using WebRTC.",
-      image: '/images/3.jpg',
-      tags: ['React', 'WebRTC'],
-    source: 'https://google.com',
-    visit: 'https://google.com',
+    title: 'Landing Page',
+    description: "This is a landing page example made with React. In this project, i used MaterialUI lib. It was deployed at Vercel. Simple CSS with just one file to the whole project. The purpose of this project is to make an IT selling site course with all kinds of subscriptions available on it.",
+      image: '/images/3.png',
+      tags: ['React', 'JavaScript', 'Material UI'],
+    source: 'https://cursos-para-ti.vercel.app',
+    visit: 'https://cursos-para-ti.vercel.app',
     id: 2,
   },
   {
