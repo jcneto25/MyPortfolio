@@ -18,10 +18,10 @@ export const projects = [
     id: 1,
   },
   {
-    title: 'Notel WebSite',
+    title: 'Hotel WebSite',
     description: "This is a hotel page example made with React, Next.js 13,  react-slick and react-popup. In this project, i used some features of Next.js 13 such as dynamic Routes and optimized Image component. It was styled with CSS with global file. It was deployed at Vercel. ",
       image: '/images/4.png',
-      tags: ['React', 'JavaScript', 'Next.js'],
+      tags: ['React', 'JavaScript', 'Next.js', 'CSS'],
     source: 'https://golf-resort.vercel.app/',
     visit: 'https://golf-resort.vercel.app/',
     id: 2,
