@@ -10,7 +10,7 @@ const Footer = () => {
       <LinkList>
         <LinkColumn>
           <LinkTitle>Contato</LinkTitle>
-          <LinkItem href="href=https://wa.me/+5585989519450?text=Olá%20!%20Visitei%20seu%20Portfolio.%20Gostaria%20de%20obter%20mais%20informações."
+          <LinkItem href="https://wa.me/+5585989519450?text=Olá%20!%20Visitei%20seu%20Portfolio.%20Gostaria%20de%20obter%20mais%20informações."
             target="_blank">+55 85 98951-9450</LinkItem>
         </LinkColumn>
         <LinkColumn>
