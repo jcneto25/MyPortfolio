@@ -50,7 +50,7 @@ const Technologies = () => (
         <ListContainer>
           <ListTitle>Frontend</ListTitle>
           <ListParagraph>
-            Desenvolvimento com React e também com suas bibliotecas Next.Js e
+            Desenvolvimento com React e também com o framework Next.Js e bibliotecas como
             MaterialUI
           </ListParagraph>
         </ListContainer>
@@ -117,7 +117,7 @@ const Technologies = () => (
         <ListContainer>
           <ListTitle>BackEnd</ListTitle>
           <ListParagraph>
-            Conhecimento na construção de aplicações server side com Node.js
+            Conhecimento na construção de aplicações server side com Node.js/Express. Criação de Rest APIs.
           </ListParagraph>
         </ListContainer>
       </ListItem>

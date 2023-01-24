@@ -16,7 +16,7 @@ const Hero = (props) => (
         meu portfolio pessoal.
       </SectionTitle>
       <SectionText>
-        Projetos em Cloud, DataScience, Python e React para alavancar o seu
+        Projetos em React/Next.js, Headless CMS, DataScience, Python para alavancar o seu
         negócio.
       </SectionText>
       <Button
