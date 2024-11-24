@@ -46,9 +46,10 @@ const Timeline = () => {
     <Section id="about">
       <SectionTitle>Sobre Mim</SectionTitle>
       <SectionText>
-        Profissional de Tecnologia atuando no mercado desde 1996. Atualmente dedicado a estudar tecnologias para o desenvolvimento
-        de aplicações Web/Mobile com React/Next.js e Tailwind. Utilização de backend com CMS Headless ou desenvolvido com 
-        Node.js/Express. Aplicação de técncias de SEO para garantir que a marca do cliente esteja sempre em destaque nos resultados de pesquisa.
+        Profissional de Tecnologia atuando no mercado desde 1996. Atualmente gerencio a unidade de desenvolvimento dinâmico do Tribunal de Justiça do Ceará, onde aplicamos
+        tecnologias de low-code/no-code aliadas a ferramentas de automação de fluxos de negócios.
+        Conhecimento no desenvolvimento de aplicações Web/Mobile com React/Next.js e Tailwind. Utilização de backend com CMS Headless ou desenvolvido com 
+        Node.js/Express. Aplicação de técnicas de SEO para garantir que a marca do cliente esteja sempre em destaque nos resultados de pesquisa.
         Conehcimento em plataformas Cloud e como elas podem auxiliar as empresas a reduzir custos na operação de seus sistemas, bem como usar serviços
         de exploração de dados.
       </SectionText>

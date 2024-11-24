@@ -19,6 +19,9 @@ const data = [
   { number: 2018, text: "Graduação em Direito" },
   { number: 2019, text: "Formação Python na Alura" },
   { number: 2022, text: "Certificações Cloud Oracle" },
+  { number: 2023, text: "Certificação Scrum Foundation Professional" },
+  { number: 2024, text: "Oracle Cloud Infrastructure 2024 AI Foundations Associate" },
+  { number: 2024, text: "Microsoft Certified: Azure AI Fundamentals" }
 ];
 
 const Acomplishments = () => (

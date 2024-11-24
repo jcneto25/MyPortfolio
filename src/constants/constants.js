@@ -35,6 +35,24 @@ export const projects = [
     visit: 'https://cursos-para-ti.vercel.app',
     id: 3,
   },
+    {
+    title: 'Low-Code/No-Code',
+    description: "This is an app made with PowerApps Plataform. It use power automate flows to send notifications to its users. The data is stored on sharepoint lists. Also it has a dashboard panel developed on PowerBI and embbedded on the app.",
+    image: '/images/5.png',
+    tags: ['PowerApp', 'Power Automate', 'PowerBI'],
+    source: '',
+    visit: '',
+    id: 4,
+  },
+    {
+    title: 'Automação de Fluxos',
+    description: "This is an automated flow made with Power Automate to check on a daily basis if a release task was closed and, if true, send a notification to the product owners with an assessment form to respond. The form is made with MS Forms.",
+    image: '/images/6.png',
+    tags: ['PowerBI', 'Power Automate', 'MS Forms'],
+    source: '',
+    visit: '',
+    id: 5,
+  },
 ];
 
 export const TimeLineData = [
@@ -45,4 +63,5 @@ export const TimeLineData = [
   { year: 2003, text: 'Atuando como Coordenador de Tecnologia em Porto Freire Engenharia', },
   { year: 2006, text: 'Atuando como desenvolvedor e analista de requisitos na empresa federal Dataprev', },
   { year: 2012, text: 'Atuando como analista de sistemas junto ao Tribunal de Justiça do Ceará', },
+  { year: 2023, text: 'Atuando como gestor na unidade de desenvolvimento dinâmico no Tribunal de Justiça do Ceará', },
 ];

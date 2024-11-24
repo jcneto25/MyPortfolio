@@ -10,6 +10,8 @@ import {
   DiNodejs,
   DiPython,
   DiReact,
+  DiTerminal,
+  DiWindows,
   DiZend,
 } from "react-icons/di";
 import {
@@ -31,10 +33,28 @@ const Technologies = () => (
     <SectionDivider />
     <SectionTitle>
       <br />
-      Tecnologias
+      Tecnologias/Technologies
     </SectionTitle>
     <SectionText>Um resumo das tecnologias com as quais trabalho.</SectionText>
     <List>
+      <ListItem>
+        <DiTerminal size="3rem" />
+        <ListContainer>
+          <ListTitle>Inteligência Artificial</ListTitle>
+          <ListParagraph>
+            Conhecimento na construção de Agentes com langchain e flowise.
+          </ListParagraph>
+        </ListContainer>
+      </ListItem>
+            <ListItem>
+        <DiWindows size="3rem" />
+        <ListContainer>
+          <ListTitle>Low-Code/No-Code</ListTitle>
+          <ListParagraph>
+            Experiência no desenvolvimento de aplicações na plataforma PowerApps e fluxos de automações com PowerAutomate .
+          </ListParagraph>
+        </ListContainer>
+      </ListItem>
       <ListItem>
         <DiPython size="3rem" />
         <ListContainer>
