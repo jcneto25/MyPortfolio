@@ -140,7 +140,7 @@ export const SecondaryBtn = styled.button`
   }
 
   &:hover {
-    color: #0f1624;
+    color: #0f1824;
     background: #fff;
     border: 1px solid #fff;
   }
@@ -172,7 +172,7 @@ export const SecondaryBtn = styled.button`
 `;
 
 export const ButtonBack = styled.div`
-  width: ${({ alt }) => (alt ? "280px" : "292px")};
+  width: ${({ alt }) => (alt ? "280px" : "392px")};
   height: ${({ alt }) => (alt ? "52px" : "74px")};
   border-radius: 70px;
   font-size: ${({ alt }) => (alt ? "20px" : "24px")};
@@ -187,8 +187,9 @@ export const ButtonBack = styled.div`
       ? "linear-gradient(270deg, #ff622e 0%, #B133FF 100%)"
       : "linear-gradient(270deg, #00DBD8 0%, #B133FF 100%)"};
   cursor: pointer;
-  transition: 0.5s ease;
+  transition: 0.7s ease;
   position: relative;
+  padding-left:20px;
   overflow: hidden;
   opacity: ${({ disabled }) => (disabled ? ".5" : "1")};
 
