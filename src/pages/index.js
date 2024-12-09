@@ -6,7 +6,7 @@ import Technologies from '../components/Technologies/Technologies';
 import Timeline from '../components/TimeLine/TimeLine';
 import { Layout } from '../layout/Layout';
 import { Section } from '../styles/GlobalComponents';
-import Client from 'baserow-client';
+import { Client } from '@baserow/api-client';
 
 const Home = ({ timelineData }) => {
   return (
@@ -23,9 +23,15 @@ const Home = ({ timelineData }) => {
   );
 };
 
-export async function getServerSideProps() {
-  const client = new Client(process.env.NEXT_PUBLIC_BASEROW_API_TOKEN, {
-    host: process.env.NEXT_PUBLIC_BASEROW_HOST,
+export async function getServerSideProps(context) {
+  const {
+    NEXT_PUBLIC_BASEROW_API_TOKEN,
+    NEXT_PUBLIC_BASEROW_HOST,
+    NEXT_PUBLIC_BASEROW_DATABASE_ID,
+    NEXT_PUBLIC_BASEROW_TABLE_ID,
+  } = context.process.env
+  const client = new Client(NEXT_PUBLIC_BASEROW_API_TOKEN, {
+    host: NEXT_PUBLIC_BASEROW_HOST,
   });
 
   try {
