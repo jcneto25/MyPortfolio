@@ -11,30 +11,7 @@ console.log("BASEROW_API_TOKEN:", process.env.NEXT_PUBLIC_BASEROW_API_TOKEN);
 
 const Timeline = ({ timelineData }) => {
    const [activeItem, setActiveItem] = useState(0);
-   const [timelineData, setTimelineData] = useState([]);
    const carouselRef = useRef();
-
-   useEffect(() => {
-    const fetchTimelineData = async () => {
-      const client = new Client(BASEROW_API_TOKEN, {
-        host: BASEROW_HOST, // Optional if self-hosting
-      });
-
-      try {
-        const { data } = await client.database.table.listRows(
-          BASEROW_DATABASE_ID,
-          BASEROW_TABLE_ID
-        );
-        setTimelineData(data);
-      } catch (error) {
-        console.error("Error fetching data from Baserow:", error);
-        // Handle error, e.g., display an error message
-      }
-    };
-
-    fetchTimelineData();
-  }, []);
-
   const TOTAL_CAROUSEL_COUNT = timelineData.length;
 
    const scroll = (node, left) => {
