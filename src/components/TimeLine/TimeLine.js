@@ -2,13 +2,35 @@ import React, { useState, useRef, useEffect } from 'react';
 
 import { CarouselButton, CarouselButtonDot, CarouselButtons, CarouselContainer, CarouselItem, CarouselItemImg, CarouselItemText, CarouselItemTitle, CarouselMobileScrollNode } from './TimeLineStyles';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import { TimeLineData } from '../../constants/constants';
-
-const TOTAL_CAROUSEL_COUNT = TimeLineData.length;
+import { Client } from 'baserow-client';
 
 const Timeline = () => {
    const [activeItem, setActiveItem] = useState(0);
+   const [timelineData, setTimelineData] = useState([]);
    const carouselRef = useRef();
+
+   useEffect(() => {
+    const fetchTimelineData = async () => {
+      const client = new Client(process.env.BASEROW_API_TOKEN, {
+        host: process.env.BASEROW_HOST, // Optional if self-hosting
+      });
+
+      try {
+        const { data } = await client.database.table.listRows(
+          process.env.BASEROW_DATABASE_ID,
+          process.env.BASEROW_TABLE_ID
+        );
+        setTimelineData(data);
+      } catch (error) {
+        console.error("Error fetching data from Baserow:", error);
+        // Handle error, e.g., display an error message
+      }
+    };
+
+    fetchTimelineData();
+  }, []);
+
+  const TOTAL_CAROUSEL_COUNT = timelineData.length;
 
    const scroll = (node, left) => {
      return node.scrollTo({ left, behavior: 'smooth' });
@@ -55,7 +77,7 @@ const Timeline = () => {
       </SectionText>
       <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
       <>
-        {TimeLineData.map((item, index) => (
+        {timelineData.map((item, index) => (
           <CarouselMobileScrollNode key={index} final={index===TOTAL_CAROUSEL_COUNT -1}>
             <CarouselItem
               index={index}
@@ -64,7 +86,7 @@ const Timeline = () => {
               onClick={(e)=> handleClick(e, index)}
             >
               <CarouselItemTitle>
-                  {item.year}
+                  {item.year} {/* Assuming 'year' is the field name in your Baserow table */}
                   <CarouselItemImg
                     width="208"
                     height="6"
@@ -96,14 +118,14 @@ const Timeline = () => {
                     </defs>
                   </CarouselItemImg>
               </CarouselItemTitle>
-              <CarouselItemText>{item.text}</CarouselItemText>
+              <CarouselItemText>{item.text} {/* Assuming 'text' is the field name in your Baserow table */}</CarouselItemText>
             </CarouselItem>
           </CarouselMobileScrollNode> 
         ))}
       </>
       </CarouselContainer>
       <CarouselButtons>
-      {TimeLineData.map((item, index) => (
+      {timelineData.map((item, index) => (
         <CarouselButton
           key={index}
           index={index}
