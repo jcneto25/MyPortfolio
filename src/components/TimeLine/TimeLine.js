@@ -2,33 +2,15 @@ import React, { useState, useRef, useEffect } from 'react';
 
 import { CarouselButton, CarouselButtonDot, CarouselButtons, CarouselContainer, CarouselItem, CarouselItemImg, CarouselItemText, CarouselItemTitle, CarouselMobileScrollNode } from './TimeLineStyles';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import Client from 'baserow-client';
+import React, { useState, useRef, useEffect } from 'react';
 
-const Timeline = () => {
+import { CarouselButton, CarouselButtonDot, CarouselButtons, CarouselContainer, CarouselItem, CarouselItemImg, CarouselItemText, CarouselItemTitle, CarouselMobileScrollNode } from './TimeLineStyles';
+import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
+
+
+const Timeline = ({ timelineData }) => {
    const [activeItem, setActiveItem] = useState(0);
-   const [timelineData, setTimelineData] = useState([]);
    const carouselRef = useRef();
-
-   useEffect(() => {
-    const fetchTimelineData = async () => {
-      const client = new Client(process.env.NEXT_PUBLIC_BASEROW_API_TOKEN, {
-        host: process.env.BASEROW_HOST, // Optional if self-hosting
-      });
-
-      try {
-        const { data } = await client.database.table.listRows(
-          parseInt(process.env.NEXT_PUBLIC_BASEROW_DATABASE_ID),
-          parseInt(process.env.NEXT_PUBLIC_BASEROW_TABLE_ID),
-        );
-        setTimelineData(data);
-      } catch (error) {
-        console.error("Error fetching data from Baserow:", error);
-        // Handle error, e.g., display an error message
-      }
-    };
-
-    fetchTimelineData();
-  }, []);
 
   const TOTAL_CAROUSEL_COUNT = timelineData.length;
 
