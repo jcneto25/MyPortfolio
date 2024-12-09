@@ -51,17 +51,3 @@ export async function getServerSideProps() {
 
 
 export default Home;
-    <Layout>
-      <Section grid>
-        <Hero />
-        <BgAnimation /> 
-      </Section> 
-      <Projects />
-      <Technologies />
-      <Timeline />
-      <Acomplishments />
-    </Layout>
-  );
-};
-
-export default Home;
