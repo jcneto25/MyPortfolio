@@ -1,12 +1,40 @@
-import { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 import { CarouselButton, CarouselButtonDot, CarouselButtons, CarouselContainer, CarouselItem, CarouselItemImg, CarouselItemText, CarouselItemTitle, CarouselMobileScrollNode } from './TimeLineStyles';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
+import { Client } from 'baserow-client';
 
+const BASEROW_HOST = process.env.NEXT_PUBLIC_BASEROW_HOST;
+const BASEROW_DATABASE_ID = process.env.NEXT_PUBLIC_BASEROW_DATABASE_ID;
+const BASEROW_TABLE_ID = process.env.NEXT_PUBLIC_BASEROW_TABLE_ID;
+const BASEROW_API_TOKEN = process.env.NEXT_PUBLIC_BASEROW_API_TOKEN;
+console.log("BASEROW_API_TOKEN:", process.env.NEXT_PUBLIC_BASEROW_API_TOKEN);
 
-const Timeline = ({ timelineData }) => {
+const Timeline = () => {
    const [activeItem, setActiveItem] = useState(0);
+   const [timelineData, setTimelineData] = useState([]);
    const carouselRef = useRef();
+
+   useEffect(() => {
+    const fetchTimelineData = async () => {
+      const client = new Client(BASEROW_API_TOKEN, {
+        host: BASEROW_HOST, // Optional if self-hosting
+      });
+
+      try {
+        const { data } = await client.database.table.listRows(
+          BASEROW_DATABASE_ID,
+          BASEROW_TABLE_ID
+        );
+        setTimelineData(data);
+      } catch (error) {
+        console.error("Error fetching data from Baserow:", error);
+        // Handle error, e.g., display an error message
+      }
+    };
+
+    fetchTimelineData();
+  }, []);
 
   const TOTAL_CAROUSEL_COUNT = timelineData.length;
 
@@ -96,7 +124,7 @@ const Timeline = ({ timelineData }) => {
                     </defs>
                   </CarouselItemImg>
               </CarouselItemTitle>
-              <CarouselItemText>{item.conquita} {/* Assuming 'text' is the field name in your Baserow table */}</CarouselItemText>
+              <CarouselItemText>{item.text} {/* Assuming 'text' is the field name in your Baserow table */}</CarouselItemText>
             </CarouselItem>
           </CarouselMobileScrollNode> 
         ))}
