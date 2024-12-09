@@ -25,7 +25,7 @@ const Home = ({ timelineData }) => {
 
 export async function getServerSideProps() {
   const client = new Client(process.env.NEXT_PUBLIC_BASEROW_API_TOKEN, {
-    host: process.env.BASEROW_HOST,
+    host: process.env.NEXT_PUBLIC_BASEROW_HOST,
   });
 
   try {
