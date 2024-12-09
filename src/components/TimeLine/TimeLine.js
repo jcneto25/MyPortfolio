@@ -11,14 +11,14 @@ const Timeline = () => {
 
    useEffect(() => {
     const fetchTimelineData = async () => {
-      const client = new Client(process.env.BASEROW_API_TOKEN, {
+      const client = new Client(process.env.NEXT_PUBLIC_BASEROW_API_TOKEN, {
         host: process.env.BASEROW_HOST, // Optional if self-hosting
       });
 
       try {
         const { data } = await client.database.table.listRows(
-          process.env.BASEROW_DATABASE_ID,
-          process.env.BASEROW_TABLE_ID
+          parseInt(process.env.NEXT_PUBLIC_BASEROW_DATABASE_ID),
+          parseInt(process.env.NEXT_PUBLIC_BASEROW_TABLE_ID),
         );
         setTimelineData(data);
       } catch (error) {
