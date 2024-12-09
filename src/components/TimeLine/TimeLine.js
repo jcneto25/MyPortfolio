@@ -86,7 +86,7 @@ const Timeline = () => {
               onClick={(e)=> handleClick(e, index)}
             >
               <CarouselItemTitle>
-                  {item.year} {/* Assuming 'year' is the field name in your Baserow table */}
+                  {item.Ano} {/* Assuming 'year' is the field name in your Baserow table */}
                   <CarouselItemImg
                     width="208"
                     height="6"
@@ -118,7 +118,7 @@ const Timeline = () => {
                     </defs>
                   </CarouselItemImg>
               </CarouselItemTitle>
-              <CarouselItemText>{item.text} {/* Assuming 'text' is the field name in your Baserow table */}</CarouselItemText>
+              <CarouselItemText>{item.conquita} {/* Assuming 'text' is the field name in your Baserow table */}</CarouselItemText>
             </CarouselItem>
           </CarouselMobileScrollNode> 
         ))}
