@@ -6,7 +6,7 @@ import Technologies from '../components/Technologies/Technologies';
 import Timeline from '../components/TimeLine/TimeLine';
 import { Layout } from '../layout/Layout';
 import { Section } from '../styles/GlobalComponents';
-import { Client } from 'baserow-client';
+import baserowClient from 'baserow-client';
 
 const Home = ({ timelineData }) => {
 
@@ -32,7 +32,8 @@ export async function getServerSideProps() {
     NEXT_PUBLIC_BASEROW_DATABASE_ID,
     NEXT_PUBLIC_BASEROW_TABLE_ID,
   } = process.env
-  const client = new Client(NEXT_PUBLIC_BASEROW_API_TOKEN, {
+  const client = new baserowClient.Client({
+    token: NEXT_PUBLIC_BASEROW_API_TOKEN,
     host: NEXT_PUBLIC_BASEROW_HOST,
   });
 
