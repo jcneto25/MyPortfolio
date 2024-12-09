@@ -6,9 +6,10 @@ import Technologies from '../components/Technologies/Technologies';
 import Timeline from '../components/TimeLine/TimeLine';
 import { Layout } from '../layout/Layout';
 import { Section } from '../styles/GlobalComponents';
-import { Client } from '@baserow/baserow-client';
+import { Client } from '@baserow/client';
 
 const Home = ({ timelineData }) => {
+
   return (
     <Layout>
       <Section grid>
@@ -22,6 +23,7 @@ const Home = ({ timelineData }) => {
     </Layout>
   );
 };
+
 
 export async function getServerSideProps() {
   const {

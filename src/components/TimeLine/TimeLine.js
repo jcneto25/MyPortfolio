@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 
 import { CarouselButton, CarouselButtonDot, CarouselButtons, CarouselContainer, CarouselItem, CarouselItemImg, CarouselItemText, CarouselItemTitle, CarouselMobileScrollNode } from './TimeLineStyles';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import { Client } from '@baserow/baserow-client';
 
 const BASEROW_HOST = process.env.NEXT_PUBLIC_BASEROW_HOST;
 const BASEROW_DATABASE_ID = process.env.NEXT_PUBLIC_BASEROW_DATABASE_ID;
@@ -10,7 +9,7 @@ const BASEROW_TABLE_ID = process.env.NEXT_PUBLIC_BASEROW_TABLE_ID;
 const BASEROW_API_TOKEN = process.env.NEXT_PUBLIC_BASEROW_API_TOKEN;
 console.log("BASEROW_API_TOKEN:", process.env.NEXT_PUBLIC_BASEROW_API_TOKEN);
 
-const Timeline = () => {
+const Timeline = ({ timelineData }) => {
    const [activeItem, setActiveItem] = useState(0);
    const [timelineData, setTimelineData] = useState([]);
    const carouselRef = useRef();
