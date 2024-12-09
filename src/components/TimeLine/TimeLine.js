@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 
 import { CarouselButton, CarouselButtonDot, CarouselButtons, CarouselContainer, CarouselItem, CarouselItemImg, CarouselItemText, CarouselItemTitle, CarouselMobileScrollNode } from './TimeLineStyles';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import { Client } from 'baserow-client';
+import { Client } from '@baserow/baserow-client';
 
 const BASEROW_HOST = process.env.NEXT_PUBLIC_BASEROW_HOST;
 const BASEROW_DATABASE_ID = process.env.NEXT_PUBLIC_BASEROW_DATABASE_ID;
