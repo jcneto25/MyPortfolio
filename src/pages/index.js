@@ -23,13 +23,13 @@ const Home = ({ timelineData }) => {
   );
 };
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   const {
     NEXT_PUBLIC_BASEROW_API_TOKEN,
     NEXT_PUBLIC_BASEROW_HOST,
     NEXT_PUBLIC_BASEROW_DATABASE_ID,
     NEXT_PUBLIC_BASEROW_TABLE_ID,
-  } = context.process.env
+  } = process.env
   const client = new Client(NEXT_PUBLIC_BASEROW_API_TOKEN, {
     host: NEXT_PUBLIC_BASEROW_HOST,
   });
