@@ -22,7 +22,7 @@ const Timeline = ({ timelineData }) => {
      e.preventDefault();
 
      if (carouselRef.current) {
-       const scrollLeft = Math.floor(carouselRef.current.scrollWidth * 0.7 * (i / TimeLineData.length));
+       const scrollLeft = Math.floor(carouselRef.current.scrollWidth * 0.7 * (i / timelineData.length)); // Use timelineData instead of TimeLineData
       
        scroll(carouselRef.current, scrollLeft);
      }
@@ -30,7 +30,7 @@ const Timeline = ({ timelineData }) => {
 
    const handleScroll = () => {
      if (carouselRef.current) {
-       const index = Math.round((carouselRef.current.scrollLeft / (carouselRef.current.scrollWidth * 0.7)) * TimeLineData.length);
+       const index = Math.round((carouselRef.current.scrollLeft / (carouselRef.current.scrollWidth * 0.7)) * timelineData.length); // Use timelineData instead of TimeLineData
 
        setActiveItem(index);
      }
@@ -100,7 +100,7 @@ const Timeline = ({ timelineData }) => {
                     </defs>
                   </CarouselItemImg>
               </CarouselItemTitle>
-              <CarouselItemText>{item.text} {/* Assuming 'text' is the field name in your Baserow table */}</CarouselItemText>
+              <CarouselItemText>{item.conquista} {/* Assuming 'text' is the field name in your Baserow table */}</CarouselItemText>
             </CarouselItem>
           </CarouselMobileScrollNode> 
         ))}

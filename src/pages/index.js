@@ -6,7 +6,6 @@ import Technologies from '../components/Technologies/Technologies';
 import Timeline from '../components/TimeLine/TimeLine';
 import { Layout } from '../layout/Layout';
 import { Section } from '../styles/GlobalComponents';
-import { Client } from 'baserow-client';
 
 const Home = ({ timelineData }) => {
 
@@ -24,40 +23,51 @@ const Home = ({ timelineData }) => {
   );
 };
 
-
 export async function getServerSideProps() {
   const {
     NEXT_PUBLIC_BASEROW_API_TOKEN,
     NEXT_PUBLIC_BASEROW_HOST,
-    NEXT_PUBLIC_BASEROW_DATABASE_ID,
     NEXT_PUBLIC_BASEROW_TABLE_ID,
-  } = process.env
-  const client = new Client({
-    apiKey: NEXT_PUBLIC_BASEROW_API_TOKEN,
-    host: NEXT_PUBLIC_BASEROW_HOST,
-  });
+  } = process.env;
 
+  if (!NEXT_PUBLIC_BASEROW_API_TOKEN) {
+    console.error("BASEROW_API_TOKEN is missing in the environment variables.");
+    return {
+      props: {
+        timelineData: [],
+      },
+    };
+  }
 
   try {
-    const { data } = await client.database.table.listRows(
-      parseInt(process.env.NEXT_PUBLIC_BASEROW_DATABASE_ID),
-      parseInt(process.env.NEXT_PUBLIC_BASEROW_TABLE_ID)
+    const response = await fetch(
+      `${NEXT_PUBLIC_BASEROW_HOST}/api/database/rows/table/${NEXT_PUBLIC_BASEROW_TABLE_ID}/?user_field_names=true`,
+      {
+        headers: {
+          Authorization: `Token ${NEXT_PUBLIC_BASEROW_API_TOKEN}`,
+        },
+      }
     );
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch data from Baserow: ${response.statusText}`);
+    }
+
+    const data = await response.json();
 
     return {
       props: {
-        timelineData: data,
+        timelineData: data.results, // Assuming the API response contains a `results` field
       },
     };
   } catch (error) {
-    console.error("Error fetching Baserow ", error);
+    console.error("Error fetching data from Baserow:", error);
     return {
       props: {
-        timelineData: [], // Return an empty array in case of an error
+        timelineData: [],
       },
     };
   }
 }
-
 
 export default Home;
