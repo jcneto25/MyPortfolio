@@ -23,7 +23,7 @@ const Home = ({ timelineData }) => {
   );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const {
     NEXT_PUBLIC_BASEROW_API_TOKEN,
     NEXT_PUBLIC_BASEROW_HOST,
@@ -59,6 +59,7 @@ export async function getServerSideProps() {
       props: {
         timelineData: data.results, // Assuming the API response contains a `results` field
       },
+      revalidate: 60, // Rebuild the page every 60 seconds (optional)
     };
   } catch (error) {
     console.error("Error fetching data from Baserow:", error);
