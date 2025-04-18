@@ -1,13 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-import { CarouselButton, CarouselButtonDot, CarouselButtons, CarouselContainer, CarouselItem, CarouselItemImg, CarouselItemText, CarouselItemTitle, CarouselMobileScrollNode } from './TimeLineStyles';
-import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
+import { AboutSection, CarouselButton, CarouselButtonDot, CarouselButtons, CarouselContainer, CarouselItem, CarouselItemImg, CarouselItemText, CarouselItemTitle, CarouselMobileScrollNode } from './TimeLineStyles';
+import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
 
-const BASEROW_HOST = process.env.NEXT_PUBLIC_BASEROW_HOST;
-const BASEROW_DATABASE_ID = process.env.NEXT_PUBLIC_BASEROW_DATABASE_ID;
-const BASEROW_TABLE_ID = process.env.NEXT_PUBLIC_BASEROW_TABLE_ID;
-const BASEROW_API_TOKEN = process.env.NEXT_PUBLIC_BASEROW_API_TOKEN;
-console.log("BASEROW_API_TOKEN:", process.env.NEXT_PUBLIC_BASEROW_API_TOKEN);
 
 const Timeline = ({ timelineData }) => {
   const [activeItem, setActiveItem] = useState(0);
@@ -22,7 +17,7 @@ const Timeline = ({ timelineData }) => {
     e.preventDefault();
 
     if (carouselRef.current) {
-      const scrollLeft = Math.floor(carouselRef.current.scrollWidth * 0.7 * (i / timelineData.length)); // Use timelineData instead of TimeLineData
+      const scrollLeft = Math.floor(carouselRef.current.scrollWidth * 0.7 * (i / timelineData.length));
 
       scroll(carouselRef.current, scrollLeft);
     }
@@ -30,14 +25,12 @@ const Timeline = ({ timelineData }) => {
 
   const handleScroll = () => {
     if (carouselRef.current) {
-      const index = Math.round((carouselRef.current.scrollLeft / (carouselRef.current.scrollWidth * 0.7)) * timelineData.length); // Use timelineData instead of TimeLineData
+      const index = Math.round((carouselRef.current.scrollLeft / (carouselRef.current.scrollWidth * 0.7)) * timelineData.length);
 
       setActiveItem(index);
     }
   }
 
-  // // snap back to beginning of scroll when window is resized
-  // // avoids a bug where content is covered up if coming from smaller screen
   useEffect(() => {
     const handleResize = () => {
       scroll(carouselRef.current, 0);
@@ -49,14 +42,14 @@ const Timeline = ({ timelineData }) => {
   return (
     <Section id="about">
       <SectionTitle>Sobre Mim</SectionTitle>
-      <SectionText>
+      <AboutSection>
         Profissional de Tecnologia atuando no mercado desde 1996. Atualmente gerencio a unidade de desenvolvimento dinâmico do Tribunal de Justiça do Ceará, onde aplicamos
         tecnologias de low-code/no-code aliadas a ferramentas de automação de fluxos de negócios.
         Conhecimento no desenvolvimento de aplicações Web/Mobile com React/Next.js e Tailwind. Utilização de backend com CMS Headless ou desenvolvido com
         Node.js/Express. Aplicação de técnicas de SEO para garantir que a marca do cliente esteja sempre em destaque nos resultados de pesquisa.
         Conhecimento em plataformas Cloud e como elas podem auxiliar as empresas a reduzir custos na operação de seus sistemas, bem como usar serviços
         de exploração de dados.
-      </SectionText>
+      </AboutSection>
       <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
         <>
           {timelineData.map((item, index) => (
@@ -68,13 +61,14 @@ const Timeline = ({ timelineData }) => {
                 onClick={(e) => handleClick(e, index)}
               >
                 <CarouselItemTitle>
-                  {item.Ano} {/* Assuming 'year' is the field name in your Baserow table */}
+                  {item.Ano}
                   <CarouselItemImg
                     width="208"
                     height="6"
                     viewBox="0 0 208 6"
                     fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <path
                       fillRule="evenodd"
                       clipRule="evenodd"
@@ -89,18 +83,15 @@ const Timeline = ({ timelineData }) => {
                         y1="0.5"
                         x2="208"
                         y2="0.500295"
-                        gradientUnits="userSpaceOnUse">
+                        gradientUnits="userSpaceOnUse"
+                      >
                         <stop stopColor="white" />
-                        <stop
-                          offset="0.79478"
-                          stopColor="white"
-                          stopOpacity="0"
-                        />
+                        <stop offset="0.79478" stopColor="white" stopOpacity="0" />
                       </linearGradient>
                     </defs>
                   </CarouselItemImg>
                 </CarouselItemTitle>
-                <CarouselItemText>{item.conquista} {/* Assuming 'text' is the field name in your Baserow table */}</CarouselItemText>
+                <CarouselItemText>{item.conquista}</CarouselItemText>
               </CarouselItem>
             </CarouselMobileScrollNode>
           ))}

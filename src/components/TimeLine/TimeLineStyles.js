@@ -1,4 +1,3 @@
-
 import styled from 'styled-components'
 
 export const CarouselContainer = styled.ul`
@@ -152,3 +151,23 @@ export const CarouselButtonDot = styled.div`
   width: 3px;
   height: 3px;
 `
+
+export const AboutSection = styled.div`
+  max-width: 1040px; /* Match the width of CarouselContainer */
+  margin: 0 auto; /* Center the section */
+  padding: 32px 0; /* Add some padding */
+  font-size: 20px; /* Increase font size */
+  line-height: 1.8; /* Improve readability */
+  color: rgba(255, 255, 255, 0.75); /* Match the text color */
+  text-align: left; /* Align text to the left */
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    font-size: 18px; /* Adjust font size for medium screens */
+    line-height: 1.6;
+  }
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    font-size: 16px; /* Adjust font size for small screens */
+    line-height: 1.4;
+  }
+`;
