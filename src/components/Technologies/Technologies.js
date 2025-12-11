@@ -42,7 +42,7 @@ const Technologies = () => (
         <ListContainer>
           <ListTitle>Inteligência Artificial</ListTitle>
           <ListParagraph>
-            Conhecimento na construção de Agentes com langchain e flowise.
+            Conhecimento na construção de arquitetura de LLMs. Configuração de LLMs em execução local com Ollama. Construção e refinamento de prompts. Criação de Agentes com os principais framwworks do mercado, como: langchain, crewAI e flowise. Construção de fluxo de codificação automatizado com Claude-CLi, Gemini-Cli e Github Copilot com técnicas SpecDriven e BMAD.
           </ListParagraph>
         </ListContainer>
       </ListItem>
