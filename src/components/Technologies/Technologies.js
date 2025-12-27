@@ -34,7 +34,7 @@ const Technologies = () => (
     <SectionDivider />
     <SectionTitle>
       <br />
-      Tecnologias/Technologies
+      Tecnologias
     </SectionTitle>
     <SectionText>Um resumo das tecnologias com as quais trabalho.</SectionText>
     <List>
