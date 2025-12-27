@@ -29,7 +29,7 @@
     "items": {
       "ai": {
         "title": "Inteligência Artificial",
-        "description": "AI Software Engineering. Construção de fluxos de desenvolvimento de software auxiliado por IA (Agentic Software Engineering). Metodologias Spec Driven, BMAD e Agent OS."
+        "description": "Conhecimento na construção de arquitetura de LLMs. Configuração de LLMs em execução local com Ollama. Construção e refinamento de prompts. Criação de Agentes com os principais framwworks do mercado, como: langchain, crewAI e flowise. Construção de fluxo de codificação automatizado com Claude-CLi, Gemini-Cli e Github Copilot com técnicas SpecDriven e BMAD."
       },
       "lowcode": {
         "title": "Low-Code/No-Code",
