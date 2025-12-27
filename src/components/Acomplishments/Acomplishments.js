@@ -5,19 +5,28 @@ import {
   SectionTitle,
 } from "../../styles/GlobalComponents";
 import { Box, Boxes, BoxNum, BoxText } from "./AcomplishmentsStyles";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 const Acomplishments = () => {
+  const { t, language } = useLanguage();
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       const NEXT_PUBLIC_BASEROW_API_TOKEN = process.env.NEXT_PUBLIC_BASEROW_API_TOKEN;
       const NEXT_PUBLIC_BASEROW_HOST = process.env.NEXT_PUBLIC_BASEROW_HOST;
-      const NEXT_PUBLIC_BASEROW_TABLE_MARCOS_ID = process.env.NEXT_PUBLIC_BASEROW_TABLE_MARCOS_ID;
+
+      // Use language-specific table ID
+      const TABLE_ID_MAP = {
+        pt: process.env.NEXT_PUBLIC_BASEROW_TABLE_MARCOS_ID,
+        en: process.env.NEXT_PUBLIC_BASEROW_TABLE_MARCOS_EN_ID
+      };
+
+      const tableId = TABLE_ID_MAP[language] || TABLE_ID_MAP.pt;
 
       try {
         const response = await fetch(
-          `${NEXT_PUBLIC_BASEROW_HOST}/api/database/rows/table/${NEXT_PUBLIC_BASEROW_TABLE_MARCOS_ID}/?user_field_names=true`,
+          `${NEXT_PUBLIC_BASEROW_HOST}/api/database/rows/table/${tableId}/?user_field_names=true`,
           {
             headers: {
               Authorization: `Token ${NEXT_PUBLIC_BASEROW_API_TOKEN}`,
@@ -43,16 +52,16 @@ const Acomplishments = () => {
 
     // Call the fetchData function
     fetchData();
-  }, []);
+  }, [language]);
 
   return (
     <Section>
-      <SectionTitle>Formação Acadêmica e Profissional</SectionTitle>
+      <SectionTitle>{t('accomplishments.title')}</SectionTitle>
       <Boxes>
         {data.map((card, index) => (
           <Box key={index}>
             <BoxNum>{card.number}</BoxNum>
-                 <BoxText>{card.text}</BoxText>
+            <BoxText>{card.text}</BoxText>
           </Box>
         ))}
       </Boxes>

@@ -2,12 +2,16 @@ import React, { useState, useRef, useEffect } from 'react';
 
 import { AboutSection, CarouselButton, CarouselButtonDot, CarouselButtons, CarouselContainer, CarouselItem, CarouselItemImg, CarouselItemText, CarouselItemTitle, CarouselMobileScrollNode } from './TimeLineStyles';
 import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
-
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const Timeline = ({ timelineData }) => {
+  const { t, language } = useLanguage();
   const [activeItem, setActiveItem] = useState(0);
   const carouselRef = useRef();
-  const TOTAL_CAROUSEL_COUNT = timelineData.length;
+
+  // Get timeline data for current language
+  const currentTimelineData = timelineData?.[language] || timelineData?.pt || [];
+  const TOTAL_CAROUSEL_COUNT = currentTimelineData.length;
 
   const scroll = (node, left) => {
     return node.scrollTo({ left, behavior: 'smooth' });
@@ -17,7 +21,7 @@ const Timeline = ({ timelineData }) => {
     e.preventDefault();
 
     if (carouselRef.current) {
-      const scrollLeft = Math.floor(carouselRef.current.scrollWidth * 0.7 * (i / timelineData.length));
+      const scrollLeft = Math.floor(carouselRef.current.scrollWidth * 0.7 * (i / currentTimelineData.length));
 
       scroll(carouselRef.current, scrollLeft);
     }
@@ -25,7 +29,7 @@ const Timeline = ({ timelineData }) => {
 
   const handleScroll = () => {
     if (carouselRef.current) {
-      const index = Math.round((carouselRef.current.scrollLeft / (carouselRef.current.scrollWidth * 0.7)) * timelineData.length);
+      const index = Math.round((carouselRef.current.scrollLeft / (carouselRef.current.scrollWidth * 0.7)) * currentTimelineData.length);
 
       setActiveItem(index);
     }
@@ -41,18 +45,13 @@ const Timeline = ({ timelineData }) => {
 
   return (
     <Section id="about">
-      <SectionTitle>Sobre Mim</SectionTitle>
+      <SectionTitle>{t('timeline.title')}</SectionTitle>
       <AboutSection>
-        Profissional de Tecnologia atuando no mercado desde 1996. Atualmente gerencio a unidade de desenvolvimento dinâmico do Tribunal de Justiça do Ceará, onde aplicamos
-        tecnologias de low-code/no-code aliadas a ferramentas de automação de fluxos de negócios.
-        Conhecimento no desenvolvimento de aplicações Web/Mobile com React/Next.js e Tailwind. Utilização de backend com CMS Headless ou desenvolvido com
-        Node.js/Express. Aplicação de técnicas de SEO para garantir que a marca do cliente esteja sempre em destaque nos resultados de pesquisa.
-        Conhecimento em plataformas Cloud e como elas podem auxiliar as empresas a reduzir custos na operação de seus sistemas, bem como usar serviços
-        de exploração de dados.
+        {t('timeline.about')}
       </AboutSection>
       <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
         <>
-          {timelineData.map((item, index) => (
+          {currentTimelineData.map((item, index) => (
             <CarouselMobileScrollNode key={index} final={index === TOTAL_CAROUSEL_COUNT - 1}>
               <CarouselItem
                 index={index}
@@ -98,7 +97,7 @@ const Timeline = ({ timelineData }) => {
         </>
       </CarouselContainer>
       <CarouselButtons>
-        {timelineData.map((item, index) => (
+        {currentTimelineData.map((item, index) => (
           <CarouselButton
             key={index}
             index={index}

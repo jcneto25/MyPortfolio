@@ -1,0 +1,11 @@
+{
+  "env": {
+    "ANTHROPIC_MODEL": "glm-4.7"
+  },
+  "outputStyle": "default",
+  "permissions": {
+    "allow": [
+      "Bash(cat:*)"
+    ]
+  }
+}

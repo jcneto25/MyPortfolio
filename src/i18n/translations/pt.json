@@ -1,0 +1,92 @@
+{
+  "header": {
+    "portfolio": "Portfolio",
+    "nav": {
+      "projects": "Projetos",
+      "technologies": "Tecnologias",
+      "about": "Sobre"
+    },
+    "languageSwitcher": {
+      "portuguese": "PT",
+      "english": "EN"
+    }
+  },
+  "hero": {
+    "title": "Bem-Vindo ao",
+    "titleHighlight": "meu portfolio pessoal.",
+    "description": "Desenvolvimento de Soluções com tecnologias IA (LangChain, Flowise, CrewAI, Vector DBs), Web (React/Next.js, Headless CMS), DataScience/Python para alavancar o seu negócio.",
+    "button": "Conheça meu CV / See my Resume"
+  },
+  "projects": {
+    "title": "Projetos",
+    "stack": "Stack",
+    "visit": "Visit",
+    "source": "Source"
+  },
+  "technologies": {
+    "title": "Tecnologias",
+    "subtitle": "Um resumo das tecnologias com as quais trabalho.",
+    "items": {
+      "ai": {
+        "title": "Inteligência Artificial",
+        "description": "AI Software Engineering. Construção de fluxos de desenvolvimento de software auxiliado por IA (Agentic Software Engineering). Metodologias Spec Driven, BMAD e Agent OS."
+      },
+      "lowcode": {
+        "title": "Low-Code/No-Code",
+        "description": "Experiência no desenvolvimento de aplicações na plataforma PowerApps e fluxos de automações com PowerAutomate."
+      },
+      "datascience": {
+        "title": "Data Science",
+        "description": "Exploração de dados com Python, Pandas, Matlib, Jupyter-Notebook. Scrapping com BeautifulSOAP."
+      },
+      "frontend": {
+        "title": "Frontend",
+        "description": "Desenvolvimento com React e também com o framework Next.Js e bibliotecas como MaterialUI"
+      },
+      "cloud": {
+        "title": "Cloud",
+        "description": "Certificações: Oracle Cloud Infrastructure 2021 Certified Cloud Operations Associate e Oracle Cloud Infrastructure Foundations 2021 Certified Associate"
+      },
+      "sql": {
+        "title": "Banco de Dados Relacional",
+        "description": "Experiência com uso de banco de dados SQLServer, Oracle e MySQL"
+      },
+      "nosql": {
+        "title": "Banco de Dados NoSQL",
+        "description": "Conhecimento nos banco de dados MongoDB e Cassandra"
+      },
+      "tools": {
+        "title": "Ferramentas de Desenvolvimento",
+        "description": "Gestão de Versões e projetos com GIT e Github. Visual Studio Code."
+      },
+      "linux": {
+        "title": "Sistema Operacional Linux",
+        "description": "Experiência com uso e administração de ambientes Linux."
+      },
+      "devops": {
+        "title": "DevOps",
+        "description": "Conhecimento no uso de containers com Docker para a implantação de sistemas."
+      },
+      "backend": {
+        "title": "BackEnd",
+        "description": "Conhecimento na construção de aplicações server side com Node.js/Express. Criação de Rest APIs."
+      }
+    }
+  },
+  "timeline": {
+    "title": "Sobre Mim",
+    "about": "Profissional de Tecnologia atuando no mercado desde 1996. Atualmente gerencio a unidade de desenvolvimento dinâmico do Tribunal de Justiça do Ceará, onde aplicamos tecnologias de low-code/no-code aliadas a ferramentas de automação de fluxos de negócios. Conhecimento no desenvolvimento de aplicações Web/Mobile com React/Next.js e Tailwind. Utilização de backend com CMS Headless ou desenvolvido com Node.js/Express. Aplicação de técnicas de SEO para garantir que a marca do cliente esteja sempre em destaque nos resultados de pesquisa. Conhecimento em plataformas Cloud e como elas podem auxiliar as empresas a reduzir custos na operação de seus sistemas, bem como usar serviços de exploração de dados."
+  },
+  "accomplishments": {
+    "title": "Formação Acadêmica e Profissional"
+  },
+  "footer": {
+    "whatsapp": "Whatsapp",
+    "email": "E-mail"
+  },
+  "errors": {
+    "baserowTokenMissing": "BASEROW_API_TOKEN is missing in the environment variables.",
+    "baserowFetchError": "Failed to fetch data from Baserow",
+    "baserowFetchErrorDetail": "Failed to fetch data from Baserow:"
+  }
+}

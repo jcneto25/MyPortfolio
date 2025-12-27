@@ -7,25 +7,29 @@ import {
 } from "../../styles/GlobalComponents";
 import Button from "../../styles/GlobalComponents/Button";
 import { LeftSection } from "./HeroStyles";
+import { useLanguage } from "../../contexts/LanguageContext";
 
-const Hero = (props) => (
-  <Section row nopadding>
-    <LeftSection>
-      <SectionTitle main center>
-        Bem-Vindo ao <br />
-        meu portfolio pessoal.
-      </SectionTitle>
-      <SectionText>
-        Desenvolvimento de Soluções com tecnologias IA (LangChain, Flowise, CrewAI, Vector DBs), Web (React/Next.js, Headless CMS), DataScience/Python para alavancar o seu
-        negócio.
-      </SectionText>
-      <Button
-        onClick={() => window.open("https://jcneto25.github.io/MyResume/")}
-      >
-        Conheça meu CV / See my Resume
-      </Button>
-    </LeftSection>
-  </Section>
-);
+const Hero = (props) => {
+  const { t } = useLanguage();
+
+  return (
+    <Section row nopadding>
+      <LeftSection>
+        <SectionTitle main center>
+          {t('hero.title')} <br />
+          {t('hero.titleHighlight')}
+        </SectionTitle>
+        <SectionText>
+          {t('hero.description')}
+        </SectionText>
+        <Button
+          onClick={() => window.open("https://jcneto25.github.io/MyResume/")}
+        >
+          {t('hero.button')}
+        </Button>
+      </LeftSection>
+    </Section>
+  );
+};
 
 export default Hero;

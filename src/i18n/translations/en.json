@@ -1,0 +1,92 @@
+{
+  "header": {
+    "portfolio": "Portfolio",
+    "nav": {
+      "projects": "Projects",
+      "technologies": "Technologies",
+      "about": "About"
+    },
+    "languageSwitcher": {
+      "portuguese": "PT",
+      "english": "EN"
+    }
+  },
+  "hero": {
+    "title": "Welcome to my",
+    "titleHighlight": "personal portfolio.",
+    "description": "Developing Solutions with AI technologies (LangChain, Flowise, CrewAI, Vector DBs), Web (React/Next.js, Headless CMS), DataScience/Python to boost your business.",
+    "button": "See my Resume"
+  },
+  "projects": {
+    "title": "Projects",
+    "stack": "Stack",
+    "visit": "Visit",
+    "source": "Source"
+  },
+  "technologies": {
+    "title": "Technologies",
+    "subtitle": "A summary of the technologies I work with.",
+    "items": {
+      "ai": {
+        "title": "Artificial Intelligence",
+        "description": "AI Software Engineering. Building AI-assisted software development flows (Agentic Software Engineering). Spec Driven, BMAD and Agent OS methodologies."
+      },
+      "lowcode": {
+        "title": "Low-Code/No-Code",
+        "description": "Experience in developing applications on the PowerApps platform and automation flows with PowerAutomate."
+      },
+      "datascience": {
+        "title": "Data Science",
+        "description": "Data exploration with Python, Pandas, Matlib, Jupyter-Notebook. Web scraping with BeautifulSOAP."
+      },
+      "frontend": {
+        "title": "Frontend",
+        "description": "Development with React and Next.js framework and libraries like MaterialUI"
+      },
+      "cloud": {
+        "title": "Cloud",
+        "description": "Certifications: Oracle Cloud Infrastructure 2021 Certified Cloud Operations Associate and Oracle Cloud Infrastructure Foundations 2021 Certified Associate"
+      },
+      "sql": {
+        "title": "Relational Databases",
+        "description": "Experience with SQLServer, Oracle and MySQL databases"
+      },
+      "nosql": {
+        "title": "NoSQL Databases",
+        "description": "Knowledge of MongoDB and Cassandra databases"
+      },
+      "tools": {
+        "title": "Development Tools",
+        "description": "Version control and project management with GIT and Github. Visual Studio Code."
+      },
+      "linux": {
+        "title": "Linux Operating System",
+        "description": "Experience using and administering Linux environments."
+      },
+      "devops": {
+        "title": "DevOps",
+        "description": "Knowledge in using containers with Docker for system deployment."
+      },
+      "backend": {
+        "title": "BackEnd",
+        "description": "Knowledge in building server-side applications with Node.js/Express. Creating REST APIs."
+      }
+    }
+  },
+  "timeline": {
+    "title": "About Me",
+    "about": "Technology professional working in the market since 1996. Currently I manage the dynamic development unit of the Court of Justice of Ceará, where we apply low-code/no-code technologies combined with business process automation tools. Knowledge in developing Web/Mobile applications with React/Next.js and Tailwind. Using backend with Headless CMS or developed with Node.js/Express. Applying SEO techniques to ensure the client's brand is always highlighted in search results. Knowledge in Cloud platforms and how they can help companies reduce costs in operating their systems, as well as using data exploration services."
+  },
+  "accomplishments": {
+    "title": "Academic and Professional Background"
+  },
+  "footer": {
+    "whatsapp": "Whatsapp",
+    "email": "E-mail"
+  },
+  "errors": {
+    "baserowTokenMissing": "BASEROW_API_TOKEN is missing in the environment variables.",
+    "baserowFetchError": "Failed to fetch data from Baserow",
+    "baserowFetchErrorDetail": "Failed to fetch data from Baserow:"
+  }
+}

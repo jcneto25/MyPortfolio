@@ -28,44 +28,60 @@ export async function getStaticProps() {
     NEXT_PUBLIC_BASEROW_API_TOKEN,
     NEXT_PUBLIC_BASEROW_HOST,
     NEXT_PUBLIC_BASEROW_TABLE_ID,
+    NEXT_PUBLIC_BASEROW_TABLE_EN_ID,
   } = process.env;
 
   if (!NEXT_PUBLIC_BASEROW_API_TOKEN) {
     console.error("BASEROW_API_TOKEN is missing in the environment variables.");
     return {
       props: {
-        timelineData: [],
+        timelineData: { pt: [], en: [] },
       },
     };
   }
 
   try {
-    const response = await fetch(
-      `${NEXT_PUBLIC_BASEROW_HOST}/api/database/rows/table/${NEXT_PUBLIC_BASEROW_TABLE_ID}/?user_field_names=true`,
-      {
-        headers: {
-          Authorization: `Token ${NEXT_PUBLIC_BASEROW_API_TOKEN}`,
-        },
-      }
-    );
+    // Fetch both Portuguese and English data in parallel
+    const [ptResponse, enResponse] = await Promise.all([
+      fetch(
+        `${NEXT_PUBLIC_BASEROW_HOST}/api/database/rows/table/${NEXT_PUBLIC_BASEROW_TABLE_ID}/?user_field_names=true`,
+        {
+          headers: {
+            Authorization: `Token ${NEXT_PUBLIC_BASEROW_API_TOKEN}`,
+          },
+        }
+      ),
+      NEXT_PUBLIC_BASEROW_TABLE_EN_ID ? fetch(
+        `${NEXT_PUBLIC_BASEROW_HOST}/api/database/rows/table/${NEXT_PUBLIC_BASEROW_TABLE_EN_ID}/?user_field_names=true`,
+        {
+          headers: {
+            Authorization: `Token ${NEXT_PUBLIC_BASEROW_API_TOKEN}`,
+          },
+        }
+      ) : null
+    ]);
 
-    if (!response.ok) {
-      throw new Error(`Failed to fetch data from Baserow: ${response.statusText}`);
+    if (!ptResponse.ok) {
+      throw new Error(`Failed to fetch Portuguese data from Baserow: ${ptResponse.statusText}`);
     }
 
-    const data = await response.json();
+    const ptData = await ptResponse.json();
+    const enData = enResponse && enResponse.ok ? await enResponse.json() : null;
 
     return {
       props: {
-        timelineData: data.results, // Assuming the API response contains a `results` field
+        timelineData: {
+          pt: ptData.results || [],
+          en: enData?.results || []
+        },
       },
-      revalidate: 60, // Rebuild the page every 60 seconds (optional)
+      revalidate: 60,
     };
   } catch (error) {
     console.error("Error fetching data from Baserow:", error);
     return {
       props: {
-        timelineData: [],
+        timelineData: { pt: [], en: [] },
       },
     };
   }

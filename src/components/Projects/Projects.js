@@ -3,16 +3,20 @@ import React from 'react';
 import { BlogCard, CardInfo, ExternalLinks, GridContainer, HeaderThree, Hr, Tag, TagList, TitleContent, UtilityList, Img } from './ProjectsStyles';
 import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
 import { projects } from '../../constants/constants';
+import { useLanguage } from '../../contexts/LanguageContext';
 
+const Projects = () => {
+  const { t, language } = useLanguage();
+  const currentProjects = projects[language] || projects.en;
 
-const Projects = () => (
+  return (
     <Section nopadding id='projects'>
       <SectionDivider/>
-      <SectionTitle main>Projetos/Projects</SectionTitle>
+      <SectionTitle main>{t('projects.title')}</SectionTitle>
       <GridContainer>
-        {projects.map(({id, image, title, description, tags, source, visit}) => (
+        {currentProjects.map(({id, image, title, description, tags, source, visit}) => (
           <BlogCard key={id}>
-            <Img src={image}/>  
+            <Img src={image}/>
             <TitleContent>
               <HeaderThree main>{title}</HeaderThree>
               <Hr/>
@@ -23,7 +27,7 @@ const Projects = () => (
             <div>
               <span><br></br></span>
               <TitleContent>
-                Stack
+                {t('projects.stack')}
               </TitleContent>
               <TagList>
                 {tags.map((tag, i)=> (
@@ -32,14 +36,15 @@ const Projects = () => (
               </TagList>
             </div>
             <UtilityList>
-              <ExternalLinks href={visit}>Visit</ExternalLinks>
-              <ExternalLinks href={visit}>Source</ExternalLinks>
+              <ExternalLinks href={visit}>{t('projects.visit')}</ExternalLinks>
+              <ExternalLinks href={source}>{t('projects.source')}</ExternalLinks>
             </UtilityList>
           </BlogCard>
         ))}
       </GridContainer>
 
     </Section>
-);
+  );
+};
 
 export default Projects;

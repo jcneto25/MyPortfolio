@@ -27,123 +27,49 @@ import {
   ListParagraph,
   ListTitle,
 } from "./TechnologiesStyles";
+import { useLanguage } from "../../contexts/LanguageContext";
 
-const Technologies = () => (
-  <Section id="tech">
-    <SectionDivider />
-    <SectionTitle>
-      <br />
-      Tecnologias/Technologies
-    </SectionTitle>
-    <SectionText>Um resumo das tecnologias com as quais trabalho.</SectionText>
-    <List>
-      <ListItem>
-        <DiTerminal size="3rem" />
-        <ListContainer>
-          <ListTitle>Inteligência Artificial</ListTitle>
-          <ListParagraph>
-            Conhecimento na construção de Agentes com langchain e flowise.
-          </ListParagraph>
-        </ListContainer>
-      </ListItem>
-            <ListItem>
-        <DiWindows size="3rem" />
-        <ListContainer>
-          <ListTitle>Low-Code/No-Code</ListTitle>
-          <ListParagraph>
-            Experiência no desenvolvimento de aplicações na plataforma PowerApps e fluxos de automações com PowerAutomate .
-          </ListParagraph>
-        </ListContainer>
-      </ListItem>
-      <ListItem>
-        <DiPython size="3rem" />
-        <ListContainer>
-          <ListTitle>Data Science</ListTitle>
-          <ListParagraph>
-            Exploração de dados com Python, Pandas, Matlib, Jupyter-Notebook.
-            Scrapping com BeautifulSOAP.
-          </ListParagraph>
-        </ListContainer>
-      </ListItem>
-      <ListItem>
-        <DiReact size="3rem" />
-        <ListContainer>
-          <ListTitle>Frontend</ListTitle>
-          <ListParagraph>
-            Desenvolvimento com React e também com o framework Next.Js e bibliotecas como
-            MaterialUI
-          </ListParagraph>
-        </ListContainer>
-      </ListItem>
-      <ListItem>
-        <DiAws size="3rem" />
-        <ListContainer>
-          <ListTitle>Cloud</ListTitle>
-          <ListParagraph>
-            Certificações: Oracle Cloud Infrastructure 2021 Certified Cloud
-            Operations Associate e Oracle Cloud Infrastructure Foundations 2021
-            Certified Associate
-          </ListParagraph>
-        </ListContainer>
-      </ListItem>
-      <ListItem>
-        <DiDatabase size="3rem" />
-        <ListContainer>
-          <ListTitle>Banco de Dados Relacional</ListTitle>
-          <ListParagraph>
-            Experiência com uso de banco de dados SQLServer, Oracle e MySQL
-          </ListParagraph>
-        </ListContainer>
-      </ListItem>
-      <ListItem>
-        <DiMongodb size="3rem" />
-        <ListContainer>
-          <ListTitle>Banco de Dados NoSQL</ListTitle>
-          <ListParagraph>
-            Conhecimento nos banco de dados MongoDB e Cassandra
-          </ListParagraph>
-        </ListContainer>
-      </ListItem>
-      <ListItem>
-        <DiGit size="3rem" />
-        <ListContainer>
-          <ListTitle>Ferramentas de Desenvolvimento</ListTitle>
-          <ListParagraph>
-            Gestão de Versões e projetos com GIT e Github. Visual Studio Code.
-          </ListParagraph>
-        </ListContainer>
-      </ListItem>
-      <ListItem>
-        <DiLinux size="3rem" />
-        <ListContainer>
-          <ListTitle>Sistema Operacional Linux</ListTitle>
-          <ListParagraph>
-            Experiência com uso e administração de ambientes Linux.
-          </ListParagraph>
-        </ListContainer>
-      </ListItem>
-      <ListItem>
-        <DiDocker size="3rem" />
-        <ListContainer>
-          <ListTitle>DevOps</ListTitle>
-          <ListParagraph>
-            Conhecimento no uso de containers com Docker para a implantação de
-            sistemas.
-          </ListParagraph>
-        </ListContainer>
-      </ListItem>
-      <ListItem>
-        <DiNodejs size="3rem" />
-        <ListContainer>
-          <ListTitle>BackEnd</ListTitle>
-          <ListParagraph>
-            Conhecimento na construção de aplicações server side com Node.js/Express. Criação de Rest APIs.
-          </ListParagraph>
-        </ListContainer>
-      </ListItem>
-    </List>
-    <SectionDivider />
-  </Section>
-);
+const Technologies = () => {
+  const { t } = useLanguage();
+
+  const techItems = [
+    { icon: <DiTerminal size="3rem" />, key: 'ai' },
+    { icon: <DiWindows size="3rem" />, key: 'lowcode' },
+    { icon: <DiPython size="3rem" />, key: 'datascience' },
+    { icon: <DiReact size="3rem" />, key: 'frontend' },
+    { icon: <DiAws size="3rem" />, key: 'cloud' },
+    { icon: <DiDatabase size="3rem" />, key: 'sql' },
+    { icon: <DiMongodb size="3rem" />, key: 'nosql' },
+    { icon: <DiGit size="3rem" />, key: 'tools' },
+    { icon: <DiLinux size="3rem" />, key: 'linux' },
+    { icon: <DiDocker size="3rem" />, key: 'devops' },
+    { icon: <DiNodejs size="3rem" />, key: 'backend' },
+  ];
+
+  return (
+    <Section id="tech">
+      <SectionDivider />
+      <SectionTitle>
+        <br />
+        {t('technologies.title')}
+      </SectionTitle>
+      <SectionText>{t('technologies.subtitle')}</SectionText>
+      <List>
+        {techItems.map(({ icon, key }) => (
+          <ListItem key={key}>
+            {icon}
+            <ListContainer>
+              <ListTitle>{t(`technologies.items.${key}.title`)}</ListTitle>
+              <ListParagraph>
+                {t(`technologies.items.${key}.description`)}
+              </ListParagraph>
+            </ListContainer>
+          </ListItem>
+        ))}
+      </List>
+      <SectionDivider />
+    </Section>
+  );
+};
 
 export default Technologies;
