@@ -29,7 +29,7 @@
     "items": {
       "ai": {
         "title": "Inteligência Artificial",
-        "description": "Conhecimento na construção de arquitetura de LLMs. Configuração de LLMs em execução local com Ollama. Construção e refinamento de prompts. Criação de Agentes com os principais framwworks do mercado, como: langchain, crewAI e flowise. Construção de fluxo de codificação automatizado com Claude-CLi, Gemini-Cli e Github Copilot com técnicas SpecDriven e BMAD."
+        "description": "Conhecimento na construção de arquitetura de LLMs. Configuração de LLMs em execução local com Ollama. Construção e refinamento de prompts. Criação de Agentes com os principais frameworks do mercado, como: langchain, crewAI e flowise. Construção de fluxo de codificação automatizado com Claude-CLi, Gemini-Cli, Opencode e Github Copilot com técnicas SpecDriven e BMAD. Parelização de agentes com git worktrees"
       },
       "lowcode": {
         "title": "Low-Code/No-Code",
