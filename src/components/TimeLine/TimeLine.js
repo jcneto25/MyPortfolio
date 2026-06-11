@@ -1,115 +1,38 @@
-import React, { useState, useRef, useEffect } from 'react';
-
-import { AboutSection, CarouselButton, CarouselButtonDot, CarouselButtons, CarouselContainer, CarouselItem, CarouselItemImg, CarouselItemText, CarouselItemTitle, CarouselMobileScrollNode } from './TimeLineStyles';
-import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
-import { useLanguage } from '../../contexts/LanguageContext';
+import React, { useEffect, useState } from "react";
+import {
+  Section,
+  SectionDivider,
+  SectionTitle,
+  SectionText,
+} from "../../styles/GlobalComponents";
+import { Box, Boxes, BoxNum, BoxText } from "./TimeLineStyles";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 const Timeline = ({ timelineData }) => {
   const { t, language } = useLanguage();
-  const [activeItem, setActiveItem] = useState(0);
-  const carouselRef = useRef();
-
-  // Get timeline data for current language
-  const currentTimelineData = timelineData?.[language] || timelineData?.pt || [];
-  const TOTAL_CAROUSEL_COUNT = currentTimelineData.length;
-
-  const scroll = (node, left) => {
-    return node.scrollTo({ left, behavior: 'smooth' });
-  }
-
-  const handleClick = (e, i) => {
-    e.preventDefault();
-
-    if (carouselRef.current) {
-      const scrollLeft = Math.floor(carouselRef.current.scrollWidth * 0.7 * (i / currentTimelineData.length));
-
-      scroll(carouselRef.current, scrollLeft);
-    }
-  }
-
-  const handleScroll = () => {
-    if (carouselRef.current) {
-      const index = Math.round((carouselRef.current.scrollLeft / (carouselRef.current.scrollWidth * 0.7)) * currentTimelineData.length);
-
-      setActiveItem(index);
-    }
-  }
+  const [data, setData] = useState(timelineData[language] || []);
 
   useEffect(() => {
-    const handleResize = () => {
-      scroll(carouselRef.current, 0);
-    }
-
-    window.addEventListener('resize', handleResize);
-  }, []);
+    setData(timelineData[language] || []);
+  }, [language, timelineData]);
 
   return (
-    <Section id="about">
-      <SectionTitle>{t('timeline.title')}</SectionTitle>
-      <AboutSection>
-        {t('timeline.about')}
-      </AboutSection>
-      <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
-        <>
-          {currentTimelineData.map((item, index) => (
-            <CarouselMobileScrollNode key={index} final={index === TOTAL_CAROUSEL_COUNT - 1}>
-              <CarouselItem
-                index={index}
-                id={`carousel__item-${index}`}
-                active={activeItem}
-                onClick={(e) => handleClick(e, index)}
-              >
-                <CarouselItemTitle>
-                  {item.Ano}
-                  <CarouselItemImg
-                    width="208"
-                    height="6"
-                    viewBox="0 0 208 6"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M2.5 5.5C3.88071 5.5 5 4.38071 5 3V3.5L208 3.50002V2.50002L5 2.5V3C5 1.61929 3.88071 0.5 2.5 0.5C1.11929 0.5 0 1.61929 0 3C0 4.38071 1.11929 5.5 2.5 5.5Z"
-                      fill="url(#paint0_linear)"
-                      fillOpacity="0.33"
-                    />
-                    <defs>
-                      <linearGradient
-                        id="paint0_linear"
-                        x1="-4.30412e-10"
-                        y1="0.5"
-                        x2="208"
-                        y2="0.500295"
-                        gradientUnits="userSpaceOnUse"
-                      >
-                        <stop stopColor="white" />
-                        <stop offset="0.79478" stopColor="white" stopOpacity="0" />
-                      </linearGradient>
-                    </defs>
-                  </CarouselItemImg>
-                </CarouselItemTitle>
-                <CarouselItemText>{item.conquista}</CarouselItemText>
-              </CarouselItem>
-            </CarouselMobileScrollNode>
-          ))}
-        </>
-      </CarouselContainer>
-      <CarouselButtons>
-        {currentTimelineData.map((item, index) => (
-          <CarouselButton
-            key={index}
-            index={index}
-            active={activeItem}
-            onClick={(e) => handleClick(e, index)}
-            type="button"
-          >
-            <CarouselButtonDot active={activeItem} />
-          </CarouselButton>
-        ))}
-      </CarouselButtons>
+    <Section>
       <SectionDivider />
+      <SectionTitle main>{t('timeline.title')}</SectionTitle>
+      {t('timeline.subtitle') && (
+        <SectionText style={{ fontSize: '18px', maxWidth: '900px', marginBottom: '24px' }}>
+          {t('timeline.subtitle')}
+        </SectionText>
+      )}
+      <Boxes>
+        {data.map((card, index) => (
+          <Box key={index}>
+            <BoxNum>{card.number}</BoxNum>
+            <BoxText>{card.text}</BoxText>
+          </Box>
+        ))}
+      </Boxes>
     </Section>
   );
 };

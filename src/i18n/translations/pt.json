@@ -107,7 +107,8 @@
   },
   "timeline": {
     "title": "Sobre Mim",
-    "about": "Profissional de Tecnologia atuando no mercado desde 1996. Atualmente gerencio a unidade de desenvolvimento dinâmico do Tribunal de Justiça do Ceará, onde aplicamos tecnologias de low-code/no-code aliadas a ferramentas de automação de fluxos de negócios. Conhecimento no desenvolvimento de aplicações Web/Mobile com React/Next.js e Tailwind. Utilização de backend com CMS Headless ou desenvolvido com Node.js/Express. Aplicação de técnicas de SEO para garantir que a marca do cliente esteja sempre em destaque nos resultados de pesquisa. Conhecimento em plataformas Cloud e como elas podem auxiliar as empresas a reduzir custos na operação de seus sistemas, bem como usar serviços de exploração de dados."
+    "subtitle": "Jornada de 25+ anos em tecnologia — de full-stack tradicional à especialização em Agentic Engineering",
+    "about": "Profissional de tecnologia atuando no mercado desde 1996. Iniciei com desenvolvimento full-stack tradicional (web, mobile, backend) e ao longo de 2 décadas evolui para especialização em Agentic Software Engineering.\n\nAtualmente gerencio a unidade de desenvolvimento dinâmico do Tribunal de Justiça do Ceará, onde lidero a transição de low-code/no-code para soluções agent-powered. Minha expertise combina:\n\n- **Fundação Sólida:** 25+ anos em full-stack (React, Next.js, Node.js, SQL/NoSQL, Cloud)\n- **Especialização Atual:** Foco em arquiteturas multi-agentes, Spec-Driven Development, orquestração com LangChain/CrewAI/Flowise\n- **Prática Real:** Framework open-source (Live and Let Code), projetos production-ready (neuroHub, social-story)\n- **Liderança:** Gestão de equipes de desenvolvimento em ambiente corporativo\n\nMinha abordagem: agents-first design para resolver problemas complexos com qualidade e velocidade."
   },
   "accomplishments": {
     "title": "Formação Acadêmica e Profissional"

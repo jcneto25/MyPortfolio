@@ -107,7 +107,8 @@
   },
   "timeline": {
     "title": "About Me",
-    "about": "Technology professional working in the market since 1996. Currently I manage the dynamic development unit of the Court of Justice of Ceará, where we apply low-code/no-code technologies combined with business process automation tools. Knowledge in developing Web/Mobile applications with React/Next.js and Tailwind. Using backend with Headless CMS or developed with Node.js/Express. Applying SEO techniques to ensure the client's brand is always highlighted in search results. Knowledge in Cloud platforms and how they can help companies reduce costs in operating their systems, as well as using data exploration services."
+    "subtitle": "25+ year journey in technology — from traditional full-stack to Agentic Engineering specialization",
+    "about": "Technology professional working in the market since 1996. I started with traditional full-stack development (web, mobile, backend) and over 2 decades evolved to specialize in Agentic Software Engineering.\n\nCurrently I manage the dynamic development unit of the Court of Justice of Ceará, where I lead the transition from low-code/no-code to agent-powered solutions. My expertise combines:\n\n- **Solid Foundation:** 25+ years in full-stack (React, Next.js, Node.js, SQL/NoSQL, Cloud)\n- **Current Specialization:** Focus on multi-agent architectures, Spec-Driven Development, orchestration with LangChain/CrewAI/Flowise\n- **Real Practice:** Open-source framework (Live and Let Code), production-ready projects (neuroHub, social-story)\n- **Leadership:** Development team management in corporate environment\n\nMy approach: agents-first design to solve complex problems with quality and speed."
   },
   "accomplishments": {
     "title": "Academic and Professional Background"

@@ -1,5 +1,81 @@
 import styled from 'styled-components'
 
+export const Boxes = styled.div`
+  width: 100%;
+  max-width: 1040px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 24px;
+
+  @media ${props => props.theme.breakpoints.sm} {
+    gap: 16px;
+  }
+`
+
+export const Box = styled.div`
+  text-align: center;
+  padding: 24px;
+  flex: 1 1 calc(33.333% - 24px);
+  max-width: calc(33.333% - 16px);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  @media ${props => props.theme.breakpoints.md} {
+    flex: 1 1 calc(50% - 24px);
+    max-width: calc(50% - 16px);
+  }
+
+  @media ${props => props.theme.breakpoints.sm} {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: 16px;
+  }
+`
+
+export const BoxNum = styled.h4`
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  background: linear-gradient(121.57deg, #FFFFFF 10%, rgba(255, 255, 255, 0.66) 30.15%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 12px;
+
+  @media ${props => props.theme.breakpoints.md} {
+    font-size: 36px;
+  }
+
+  @media ${props => props.theme.breakpoints.sm} {
+    font-size: 32px;
+  }
+`
+
+export const BoxText = styled.p`
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.75);
+
+  @media ${props => props.theme.breakpoints.md} {
+    font-size: 14px;
+  }
+
+  @media ${props => props.theme.breakpoints.sm} {
+    font-size: 13px;
+  }
+`
+
 export const CarouselContainer = styled.ul`
   max-width: 1040px;
   background: #0F1624;

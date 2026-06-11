@@ -1,6 +1,6 @@
 import Acomplishments from '../components/Acomplishments/Acomplishments';
-import BgAnimation from '../components/BackgrooundAnimation/BackgroundAnimation';
 import Hero from '../components/Hero/Hero';
+import Methodology from '../components/Methodology/Methodology';
 import Projects from '../components/Projects/Projects';
 import Technologies from '../components/Technologies/Technologies';
 import Timeline from '../components/TimeLine/TimeLine';
@@ -8,13 +8,12 @@ import { Layout } from '../layout/Layout';
 import { Section } from '../styles/GlobalComponents';
 
 const Home = ({ timelineData }) => {
-
   return (
     <Layout>
       <Section grid>
         <Hero />
-        <BgAnimation />
       </Section>
+      <Methodology />
       <Projects />
       <Technologies />
       <Timeline timelineData={timelineData} />
@@ -41,7 +40,6 @@ export async function getStaticProps() {
   }
 
   try {
-    // Fetch both Portuguese and English data in parallel
     const [ptResponse, enResponse] = await Promise.all([
       fetch(
         `${NEXT_PUBLIC_BASEROW_HOST}/api/database/rows/table/${NEXT_PUBLIC_BASEROW_TABLE_ID}/?user_field_names=true`,
