@@ -29,52 +29,79 @@
     "source": "Source"
   },
   "technologies": {
-    "title": "Tecnologias",
-    "subtitle": "Um resumo das tecnologias com as quais trabalho.",
-    "items": {
-      "ai": {
-        "title": "Inteligência Artificial",
-        "description": "Conhecimento na construção de arquitetura de LLMs. Configuração de LLMs em execução local com Ollama. Construção e refinamento de prompts. Criação de Agentes com os principais framwworks do mercado, como: langchain, crewAI e flowise. Construção de fluxo de codificação automatizado com Claude-CLi, Gemini-Cli e Github Copilot com técnicas SpecDriven e BMAD."
+    "title": "Stack Tecnológico Agent-First",
+    "subtitle": "Tecnologias organizadas por camadas — IA/Agentes como core, full-stack como suporte",
+    "coreTitle": "🤖 Agent Orchestration & LLMs",
+    "methodsTitle": "⚡ Agentic Development Methods",
+    "foundationTitle": "🛠️ Full-Stack Foundation",
+    "core": {
+      "agentFrameworks": {
+        "title": "Agent Frameworks",
+        "description": "LangChain, CrewAI, Flowise"
       },
-      "lowcode": {
-        "title": "Low-Code/No-Code",
-        "description": "Experiência no desenvolvimento de aplicações na plataforma PowerApps e fluxos de automações com PowerAutomate."
+      "llmTerminals": {
+        "title": "LLM Terminals",
+        "description": "Claude CLI, OpenCode, Cursor, Antigravity, Aider"
       },
-      "datascience": {
-        "title": "Data Science",
-        "description": "Exploração de dados com Python, Pandas, Matlib, Jupyter-Notebook. Scrapping com BeautifulSOAP."
+      "vectorDBs": {
+        "title": "Vector DBs",
+        "description": "ChromaDB, Pinecone"
       },
+      "multimodal": {
+        "title": "Multi-modal",
+        "description": "GPT-4V (Vision), DALL-E, Stable Diffusion"
+      }
+    },
+    "methods": {
+      "specDriven": {
+        "title": "Spec-Driven Development",
+        "description": "Live and Let Code framework"
+      },
+      "testDriven": {
+        "title": "Test-Driven",
+        "description": "TDD com agentes"
+      },
+      "codeReview": {
+        "title": "Code Review",
+        "description": "Automated agent review"
+      },
+      "contextMgmt": {
+        "title": "Context Management",
+        "description": "Token optimization"
+      },
+      "refinementLoops": {
+        "title": "Refinement Loops",
+        "description": "Human-agent iteration"
+      }
+    },
+    "foundation": {
       "frontend": {
         "title": "Frontend",
-        "description": "Desenvolvimento com React e também com o framework Next.Js e bibliotecas como MaterialUI"
+        "description": "React, Next.js, Material UI"
+      },
+      "backend": {
+        "title": "Backend",
+        "description": "Node.js, Express"
+      },
+      "databases": {
+        "title": "Database",
+        "description": "SQL + NoSQL"
       },
       "cloud": {
         "title": "Cloud",
-        "description": "Certificações: Oracle Cloud Infrastructure 2021 Certified Cloud Operations Associate e Oracle Cloud Infrastructure Foundations 2021 Certified Associate"
-      },
-      "sql": {
-        "title": "Banco de Dados Relacional",
-        "description": "Experiência com uso de banco de dados SQLServer, Oracle e MySQL"
-      },
-      "nosql": {
-        "title": "Banco de Dados NoSQL",
-        "description": "Conhecimento nos banco de dados MongoDB e Cassandra"
+        "description": "Oracle Cloud Certified"
       },
       "tools": {
-        "title": "Ferramentas de Desenvolvimento",
-        "description": "Gestão de Versões e projetos com GIT e Github. Visual Studio Code."
+        "title": "Tools",
+        "description": "Git, GitHub, VS Code"
       },
       "linux": {
-        "title": "Sistema Operacional Linux",
-        "description": "Experiência com uso e administração de ambientes Linux."
+        "title": "Linux",
+        "description": "System administration"
       },
       "devops": {
         "title": "DevOps",
-        "description": "Conhecimento no uso de containers com Docker para a implantação de sistemas."
-      },
-      "backend": {
-        "title": "BackEnd",
-        "description": "Conhecimento na construção de aplicações server side com Node.js/Express. Criação de Rest APIs."
+        "description": "Docker containers"
       }
     }
   },
