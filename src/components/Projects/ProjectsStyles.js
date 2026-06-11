@@ -1,50 +1,48 @@
 import styled from 'styled-components';
 
 export const Img = styled.img`
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: ${props => props.isAgent ? '200px' : '100%'};
   object-fit: cover;
   overflow: hidden;
-`
+`;
 
-export const GridContainer = styled.section`
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-padding: 3rem;
-place-items: center;
-column-gap: 2rem;
-row-gap: 3rem;
-@media ${(props) => props.theme.breakpoints.sm} {
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  padding-bottom: 0;
-}
-
-`
 export const BlogCard = styled.div`
-  border-radius: 10px;
-  box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
+  position: relative;
+  border-radius: ${props => props.isAgent ? '12px' : '10px'};
+  border: ${props => props.isAgent
+    ? `2px solid ${props.theme.colors.borderAgent}`
+    : `1px solid ${props.theme.colors.borderTraditional}`
+  };
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
   text-align: center;
-  width: 400px;
+  width: ${props => props.isAgent ? '400px' : '350px'};
+  background: ${props => props.theme.colors.cards};
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &:hover {
+    ${props => props.isAgent && 'transform: translateY(-4px);'}
+    ${props => props.isAgent && 'box-shadow: 0 8px 24px rgba(139, 92, 246, 0.4);'}
+  }
+
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 100%;
   }
 `;
+
 export const TitleContent = styled.div`
   text-align: center;
   z-index: 20;
   width: 100%;
-
 `;
-
 
 export const HeaderThree = styled.h3`
   font-weight: 500;
   letter-spacing: 2px;
-  color: #9cc9e3;
+  color: ${props => props.isAgent ? props.theme.colors.agentPurple : '#9cc9e3'};
   padding: .5rem 0;
-  font-size: ${(props) => props.main ? '3rem' : '2rem'};
+  font-size: ${props => props.main ? '2rem' : '1.8rem'};
 `;
 
 export const Hr = styled.hr`
@@ -52,61 +50,81 @@ export const Hr = styled.hr`
   height: 3px;
   margin: 20px auto;
   border: 0;
-  background: #d0bb57;
+  background: ${props => props.isAgent ? props.theme.colors.agentPurple : '#d0bb57'};
 `;
-
-export const Intro = styled.div`
-  width: 170px;
-  margin: 0 auto;
-  color: #dce3e7;
-  font-family: 'Droid Serif', serif;
-  font-size: 13px;
-  font-style: italic;
-  line-height: 18px;
-`;
-
 
 export const CardInfo = styled.p`
   width: 100%;
-  padding: 0 50px;
-  color: #e4e6e7;
-  font-style: 2rem;
-  line-height: 24px;
+  padding: ${props => props.isAgent ? '0 24px' : '0 50px'};
+  color: ${props => props.theme.colors.textSecondary};
+  font-size: 14px;
+  line-height: 1.5;
   text-align: justify;
+
   @media ${(props) => props.theme.breakpoints.sm} {
-    padding:.3rem
-  
-}
-`;
-
-
-export const UtilityList = styled.ul`
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  justify-content: space-around;
-  margin: 2.5rem 0;
+    padding: .3rem;
+  }
 `;
 
 export const ExternalLinks = styled.a`
-color:#d4c0c0;
-font-size: 1.6rem;
-padding:1rem 1.5rem;
-background: #6b3030;
-border-radius: 15px;
-transition: 0.5s;
-&:hover{
-  background: #801414;
+  color: ${props => props.theme.colors.textPrimary};
+  font-size: 16px;
+  padding: 8px 16px;
+  background: ${props => props.isAgent
+    ? props.theme.gradients.button
+    : '#6b3030'};
+  border-radius: 8px;
+  transition: 0.3s;
+  text-decoration: none;
 
-}
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
 export const TagList = styled.ul`
-display: flex;
-justify-content: space-around;
-padding: 2rem;
-`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 1rem;
+`;
+
 export const Tag = styled.li`
-color: #d8bfbf;
-font-size: 1.5rem;
-`
+  color: ${props => props.isAgent ? props.theme.colors.agentGreen : '#d8bfbf'};
+  font-size: ${props => props.isAgent ? '13px' : '15px'};
+  font-weight: ${props => props.isAgent ? '600' : '400'};
+`;
+
+export const ProjectSection = styled.div`
+  margin: 32px 0;
+`;
+
+export const ProjectGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(${props => props.isCompact ? '300px' : '400px'}, 1fr));
+  gap: ${props => props.isCompact ? '16px' : '24px'};
+  padding: ${props => props.isCompact ? '16px' : '24px'};
+  place-items: center;
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+`;
+
+export const AgentBadge = styled.div`
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: ${props => props.theme.colors.agentPurple};
+  color: ${props => props.theme.colors.textPrimary};
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
+  z-index: 10;
+`;

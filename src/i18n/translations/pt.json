@@ -22,6 +22,8 @@
   },
   "projects": {
     "title": "Projetos",
+    "agentSubtitle": "Soluções desenvolvidas com arquiteturas multi-agentes",
+    "traditionalSubtitle": "Fundação Full-Stack (projetos anteriores)",
     "stack": "Stack",
     "visit": "Visit",
     "source": "Source"
