@@ -4,6 +4,7 @@
     "nav": {
       "projects": "Projetos",
       "technologies": "Tecnologias",
+      "methodology": "Metodologia",
       "about": "Sobre"
     },
     "languageSwitcher": {
@@ -12,10 +13,12 @@
     }
   },
   "hero": {
-    "title": "Bem-Vindo ao",
-    "titleHighlight": "meu portfolio pessoal.",
-    "description": "Desenvolvimento de Soluções com tecnologias IA (LangChain, Flowise, CrewAI, Vector DBs), Web (React/Next.js, Headless CMS), DataScience/Python para alavancar o seu negócio.",
-    "button": "Conheça meu CV / See my Resume"
+    "title": "Especialista em",
+    "titleHighlight": "Agentic Software Engineering",
+    "description": "Desenvolvo software com agentes usando Claude CLI, OpenCode, Cursor, Antigravity CLI e Aider. Especialista em Spec-Driven Development com gestão eficiente de contexto para otimização de tokens. Aplico TDD com agentes, code review agentico automatizado, refinement loops human-agent e multi-agent orquestração. Autor do framework Live and Let Code — metodologia production-ready para desenvolvimento agentico com agents-first design.",
+    "buttonResume": "Conheça meu CV",
+    "buttonMethodology": "Ver Metodologia",
+    "buttonProjects": "Ver Projetos Agent"
   },
   "projects": {
     "title": "Projetos",

@@ -6,14 +6,25 @@ export const LeftSection = styled.div`
     width: 80%;
     display: flex;
     flex-direction: column;
-
     margin: 0 auto;
   }
   @media ${(props) => props.theme.breakpoints.md} {
     width: 100%;
     display: flex;
     flex-direction: column;
-
     margin: 0 auto;
+  }
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  margin-top: 32px;
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    width: 100%;
+    gap: 12px;
   }
 `;
