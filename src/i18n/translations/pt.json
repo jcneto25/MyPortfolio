@@ -83,6 +83,36 @@
   "accomplishments": {
     "title": "Formação Acadêmica e Profissional"
   },
+  "methodology": {
+    "title": "Metodologia de Desenvolvimento Agentico",
+    "subtitle": "Framework open-source para Spec-Driven Development com agentes. Transforma especificações funcionais em código production-ready através de orquestração multi-agentes.",
+    "benefitsTitle": "Benefícios",
+    "cta": "📖 Ver no GitHub",
+    "phases": {
+      "phase1": {
+        "title": "Spec Definition",
+        "description": "Especificação funcional clara com critérios de aceitação"
+      },
+      "phase2": {
+        "title": "Agent Orchestration",
+        "description": "Múltiplos agentes especializados (architect, developer, reviewer)"
+      },
+      "phase3": {
+        "title": "Code Generation + Review",
+        "description": "Implementação agentica com code review automatizado"
+      },
+      "phase4": {
+        "title": "Human Refinement",
+        "description": "Refinement loop human-agent para otimização"
+      }
+    },
+    "benefits": {
+      "benefit1": "Consistência: Specs como fonte de verdade",
+      "benefit2": "Velocidade: Agents aceleram implementação",
+      "benefit3": "Qualidade: Code review agentico automatizado",
+      "benefit4": "Flexibilidade: Human no loop para decisões complexas"
+    }
+  },
   "footer": {
     "whatsapp": "Whatsapp",
     "email": "E-mail"
