@@ -73,7 +73,7 @@ const Header = () => {
       <Div3>
         <LanguageSwitcher />
         <SocialIcons
-          href="http://github.com/jcneto25"
+          href="https://github.com/jcneto25"
           target="_blank"
           rel="noopener noreferrer"
           aria-label={socialLabels.github}

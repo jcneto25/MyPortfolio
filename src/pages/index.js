@@ -47,15 +47,15 @@ const fetchBaserowRows = async ({ host, token, tableId, label }) => {
 
 export async function getStaticProps() {
   const {
-    NEXT_PUBLIC_BASEROW_API_TOKEN,
-    NEXT_PUBLIC_BASEROW_HOST,
-    NEXT_PUBLIC_BASEROW_TIMELINE_TABLE_PT_ID,
-    NEXT_PUBLIC_BASEROW_TIMELINE_TABLE_EN_ID,
-    NEXT_PUBLIC_BASEROW_ACCOMPLISHMENTS_TABLE_PT_ID,
-    NEXT_PUBLIC_BASEROW_ACCOMPLISHMENTS_TABLE_EN_ID,
+    BASEROW_API_TOKEN,
+    BASEROW_HOST,
+    BASEROW_TIMELINE_TABLE_PT_ID,
+    BASEROW_TIMELINE_TABLE_EN_ID,
+    BASEROW_ACCOMPLISHMENTS_TABLE_PT_ID,
+    BASEROW_ACCOMPLISHMENTS_TABLE_EN_ID,
   } = process.env;
 
-  if (!NEXT_PUBLIC_BASEROW_API_TOKEN) {
+  if (!BASEROW_API_TOKEN) {
     console.error("BASEROW_API_TOKEN is missing in the environment variables.");
     return {
       props: {
@@ -73,27 +73,27 @@ export async function getStaticProps() {
       accomplishmentsEnRows,
     ] = await Promise.all([
       fetchBaserowRows({
-        host: NEXT_PUBLIC_BASEROW_HOST,
-        token: NEXT_PUBLIC_BASEROW_API_TOKEN,
-        tableId: NEXT_PUBLIC_BASEROW_TIMELINE_TABLE_PT_ID,
+        host: BASEROW_HOST,
+        token: BASEROW_API_TOKEN,
+        tableId: BASEROW_TIMELINE_TABLE_PT_ID,
         label: 'timeline (pt)',
       }),
       fetchBaserowRows({
-        host: NEXT_PUBLIC_BASEROW_HOST,
-        token: NEXT_PUBLIC_BASEROW_API_TOKEN,
-        tableId: NEXT_PUBLIC_BASEROW_TIMELINE_TABLE_EN_ID,
+        host: BASEROW_HOST,
+        token: BASEROW_API_TOKEN,
+        tableId: BASEROW_TIMELINE_TABLE_EN_ID,
         label: 'timeline (en)',
       }),
       fetchBaserowRows({
-        host: NEXT_PUBLIC_BASEROW_HOST,
-        token: NEXT_PUBLIC_BASEROW_API_TOKEN,
-        tableId: NEXT_PUBLIC_BASEROW_ACCOMPLISHMENTS_TABLE_PT_ID,
+        host: BASEROW_HOST,
+        token: BASEROW_API_TOKEN,
+        tableId: BASEROW_ACCOMPLISHMENTS_TABLE_PT_ID,
         label: 'accomplishments (pt)',
       }),
       fetchBaserowRows({
-        host: NEXT_PUBLIC_BASEROW_HOST,
-        token: NEXT_PUBLIC_BASEROW_API_TOKEN,
-        tableId: NEXT_PUBLIC_BASEROW_ACCOMPLISHMENTS_TABLE_EN_ID,
+        host: BASEROW_HOST,
+        token: BASEROW_API_TOKEN,
+        tableId: BASEROW_ACCOMPLISHMENTS_TABLE_EN_ID,
         label: 'accomplishments (en)',
       }),
     ]);
