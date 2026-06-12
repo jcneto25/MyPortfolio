@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
   Section,
-  SectionDivider,
   SectionTitle,
   SectionText,
 } from "../../styles/GlobalComponents";
@@ -43,7 +42,6 @@ const Timeline = ({ timelineData }) => {
           </Box>
         ))}
       </Boxes>
-      <SectionDivider />
     </Section>
   );
 };
