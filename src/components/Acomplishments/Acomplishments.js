@@ -4,7 +4,7 @@ import {
   SectionDivider,
   SectionTitle,
 } from "../../styles/GlobalComponents";
-import { Box, Boxes, BoxNum, BoxText } from "./AcomplishmentsStyles";
+import { Box, Boxes, BoxNum, BoxText, EmptyState } from "./AcomplishmentsStyles";
 import { useLanguage } from "../../contexts/LanguageContext";
 
 const mapRows = (rows = []) =>

@@ -34,7 +34,9 @@
     "source": "View Source",
     "agentBadge": "Agentic",
     "architectureLabel": "Architecture",
-    "outcomeLabel": "Outcome"
+    "outcomeLabel": "Outcome",
+    "expandImage": "Click to expand image",
+    "closeImage": "Close image"
   },
   "technologies": {
     "title": "Technologies",
