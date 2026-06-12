@@ -161,6 +161,8 @@
   "errors": {
     "baserowTokenMissing": "BASEROW_API_TOKEN is missing in the environment variables.",
     "baserowFetchError": "Failed to fetch data from Baserow",
-    "baserowFetchErrorDetail": "Failed to fetch data from Baserow:"
+    "baserowFetchErrorDetail": "Failed to fetch data from Baserow:",
+    "emptyTimeline": "No timeline entries yet.",
+    "emptyAccomplishments": "No accomplishments listed yet."
   }
 }

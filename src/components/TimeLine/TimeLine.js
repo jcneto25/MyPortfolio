@@ -4,7 +4,7 @@ import {
   SectionTitle,
   SectionText,
 } from "../../styles/GlobalComponents";
-import { Box, Boxes, BoxNum, BoxText } from "./TimeLineStyles";
+import { Box, Boxes, BoxNum, BoxText, EmptyState } from "./TimeLineStyles";
 import { useLanguage } from "../../contexts/LanguageContext";
 
 const mapRows = (rows = []) =>
@@ -35,12 +35,16 @@ const Timeline = ({ timelineData }) => {
         </SectionText>
       )}
       <Boxes>
-        {data.map((card, index) => (
-          <Box key={index}>
-            <BoxNum>{card.number}</BoxNum>
-            <BoxText>{card.text}</BoxText>
-          </Box>
-        ))}
+        {data.length === 0 ? (
+          <EmptyState>{t('errors.emptyTimeline')}</EmptyState>
+        ) : (
+          data.map((card, index) => (
+            <Box key={index}>
+              <BoxNum>{card.number}</BoxNum>
+              <BoxText>{card.text}</BoxText>
+            </Box>
+          ))
+        )}
       </Boxes>
     </Section>
   );

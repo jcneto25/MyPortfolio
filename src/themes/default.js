@@ -1,8 +1,46 @@
 export default {
   // Typography
   fonts: {
-    title: "'Inter', 'Roboto', sans-serif",
+    title: "'Space Grotesk', 'Inter', 'Roboto', sans-serif",
     main: "'Inter', 'Roboto', sans-serif"
+  },
+  // Typographic scale (1rem = 10px via 62.5% base)
+  type: {
+    scale: {
+      xs: "12px",
+      sm: "14px",
+      base: "16px",
+      md: "18px",
+      lg: "20px",
+      xl: "24px",
+      xxl: "32px",
+      xxxl: "48px",
+      display: "56px",
+      hero: "65px",
+    },
+    weight: {
+      light: 300,
+      regular: 400,
+      medium: 500,
+      semibold: 600,
+      bold: 700,
+      extrabold: 800,
+    },
+    leading: {
+      tight: 1.1,
+      snug: 1.25,
+      normal: 1.5,
+      relaxed: 1.7,
+    },
+    tracking: {
+      darkSurface: "0.01em",
+      uppercaseLabel: "0.08em",
+    },
+    measure: {
+      body: "720px",
+      wide: "800px",
+      narrow: "560px",
+    },
   },
   // Dark mode color palette
   colors: {
@@ -15,6 +53,16 @@ export default {
     agentPurple: "#8B5CF6",
     agentGreen: "#10B981",
     purpleDark: "#6D28D9",
+    accentTeal: "#13ADC7",
+
+    // Traditional project section
+    traditionalLinkBg: "#6b3030",
+    traditionalTitle: "#9cc9e3",
+    traditionalTag: "#d8bfbf",
+    traditionalDivider: "#d0bb57",
+
+    // Card surfaces
+    cardsAlt: "#212D45",
 
     // Text colors
     textPrimary: "#FFFFFF",

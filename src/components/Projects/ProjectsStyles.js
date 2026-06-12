@@ -63,7 +63,7 @@ export const Hr = styled.hr`
   height: 3px;
   margin: 20px auto;
   border: 0;
-  background: ${props => props.isAgent ? props.theme.colors.agentPurple : '#d0bb57'};
+  background: ${props => props.isAgent ? props.theme.colors.agentPurple : props.theme.colors.traditionalDivider};
 `;
 
 export const CardInfo = styled.p`
@@ -109,7 +109,7 @@ export const ExternalLinks = styled.a`
   padding: 8px 16px;
   background: ${props => props.isAgent
     ? props.theme.gradients.button
-    : '#6b3030'};
+    : props.theme.colors.traditionalLinkBg};
   border-radius: 8px;
   transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
   text-decoration: none;
@@ -143,7 +143,7 @@ export const TagList = styled.ul`
 `;
 
 export const Tag = styled.li`
-  color: ${props => props.isAgent ? props.theme.colors.agentGreen : '#d8bfbf'};
+  color: ${props => props.isAgent ? props.theme.colors.agentGreen : props.theme.colors.traditionalTag};
   font-size: ${props => props.isAgent ? '13px' : '15px'};
   font-weight: ${props => props.isAgent ? '600' : '400'};
 `;

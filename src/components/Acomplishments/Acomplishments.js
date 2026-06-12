@@ -31,12 +31,16 @@ const Acomplishments = ({ accomplishmentsData }) => {
       <SectionDivider />
       <SectionTitle style={{ paddingTop: '58px' }}>{t('accomplishments.title')}</SectionTitle>
       <Boxes>
-        {data.map((card, index) => (
-          <Box key={index}>
-            <BoxNum>{card.number}</BoxNum>
-            <BoxText>{card.text}</BoxText>
-          </Box>
-        ))}
+        {data.length === 0 ? (
+          <EmptyState>{t('errors.emptyAccomplishments')}</EmptyState>
+        ) : (
+          data.map((card, index) => (
+            <Box key={index}>
+              <BoxNum>{card.number}</BoxNum>
+              <BoxText>{card.text}</BoxText>
+            </Box>
+          ))
+        )}
       </Boxes>
     </Section>
   );

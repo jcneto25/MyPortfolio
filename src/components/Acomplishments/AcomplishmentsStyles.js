@@ -23,7 +23,7 @@ export const Boxes = styled.div`
 `
 
 export const Box = styled.div`
-  background: #212D45;
+  background: ${props => props.theme.colors.cardsAlt};
   border-radius: 12px;
   height: 184px;
   padding: 24px;
@@ -79,8 +79,8 @@ export const BoxText = styled.p`
   };
 
   @media ${props => props.theme.breakpoints.sm} {
-    font-size: 10px;
-    line-height: 14px;
+    font-size: 14px;
+    line-height: 18px;
   }
 `
 
@@ -132,3 +132,17 @@ export const IconContainer = styled.div`
     justify-content: space-between;
   }
 `
+
+export const EmptyState = styled.p`
+  width: 100%;
+  text-align: center;
+  padding: 48px 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 18px;
+  margin: 0 auto;
+
+  @media ${props => props.theme.breakpoints.sm} {
+    font-size: 16px;
+    padding: 32px 0;
+  }
+`;
