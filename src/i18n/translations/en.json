@@ -4,6 +4,7 @@
     "nav": {
       "projects": "Projects",
       "technologies": "Technologies",
+      "methodology": "Methodology",
       "about": "About"
     },
     "languageSwitcher": {
@@ -12,16 +13,28 @@
     }
   },
   "hero": {
-    "title": "Welcome to my",
-    "titleHighlight": "personal portfolio.",
-    "description": "Developing Solutions with AI technologies (LangChain, Flowise, CrewAI, Vector DBs), Web (React/Next.js, Headless CMS), DataScience/Python to boost your business.",
-    "button": "See my Resume"
+    "title": "Specialist in",
+    "titleHighlight": "Agentic Software Engineering",
+    "description": "I build agent-powered software with multi-agent orchestration and Spec-Driven Development to turn complex requirements into production-ready solutions.",
+    "supportingText": "Open-source framework, real AI projects, and 25+ years of software engineering experience.",
+    "buttonResume": "See my Resume",
+    "buttonMethodology": "See Methodology",
+    "buttonProjects": "See Agent Projects",
+    "proofListLabel": "Key profile credentials",
+    "proofExperience": "25+ years in technology",
+    "proofFramework": "Open-source framework",
+    "proofProjects": "Production-ready AI projects"
   },
   "projects": {
     "title": "Projects",
+    "agentSubtitle": "Solutions built with multi-agent architectures",
+    "traditionalSubtitle": "Full-Stack Foundation (prior work)",
     "stack": "Stack",
-    "visit": "Visit",
-    "source": "Source"
+    "visit": "Open Project",
+    "source": "View Source",
+    "agentBadge": "Agentic",
+    "architectureLabel": "Architecture",
+    "outcomeLabel": "Outcome"
   },
   "technologies": {
     "title": "Technologies",
@@ -31,56 +44,114 @@
         "title": "Artificial Intelligence",
         "description": "Knowledge in building LLM architectures. Configuration of LLMs running locally with Ollama. Building and refining prompts. Creating Agents with the main market frameworks such as: langchain, crewAI and flowise. Building automated coding workflows with Claude-CLi, Gemini-Cli, Opencode and Github Copilot with SpecDriven and BMAD techniques. Agent parallelization with git worktrees"
       },
-      "lowcode": {
-        "title": "Low-Code/No-Code",
-        "description": "Experience in developing applications on the PowerApps platform and automation flows with PowerAutomate."
+      "llmTerminals": {
+        "title": "LLM Terminals",
+        "description": "Claude CLI, OpenCode, Cursor, Antigravity, Aider"
       },
-      "datascience": {
-        "title": "Data Science",
-        "description": "Data exploration with Python, Pandas, Matlib, Jupyter-Notebook. Web scraping with BeautifulSOAP."
+      "vectorDBs": {
+        "title": "Vector DBs",
+        "description": "ChromaDB, Pinecone"
       },
+      "multimodal": {
+        "title": "Multi-modal",
+        "description": "GPT-4V (Vision), DALL-E, Stable Diffusion"
+      }
+    },
+    "methods": {
+      "specDriven": {
+        "title": "Spec-Driven Development",
+        "description": "Live and Let Code framework"
+      },
+      "testDriven": {
+        "title": "Test-Driven",
+        "description": "TDD with agents"
+      },
+      "codeReview": {
+        "title": "Code Review",
+        "description": "Automated agent review"
+      },
+      "contextMgmt": {
+        "title": "Context Management",
+        "description": "Token optimization"
+      },
+      "refinementLoops": {
+        "title": "Refinement Loops",
+        "description": "Human-agent iteration"
+      }
+    },
+    "foundation": {
       "frontend": {
         "title": "Frontend",
-        "description": "Development with React and Next.js framework and libraries like MaterialUI"
+        "description": "React, Next.js, Material UI"
+      },
+      "backend": {
+        "title": "Backend",
+        "description": "Node.js, Express"
+      },
+      "databases": {
+        "title": "Database",
+        "description": "SQL + NoSQL"
       },
       "cloud": {
         "title": "Cloud",
-        "description": "Certifications: Oracle Cloud Infrastructure 2021 Certified Cloud Operations Associate and Oracle Cloud Infrastructure Foundations 2021 Certified Associate"
-      },
-      "sql": {
-        "title": "Relational Databases",
-        "description": "Experience with SQLServer, Oracle and MySQL databases"
-      },
-      "nosql": {
-        "title": "NoSQL Databases",
-        "description": "Knowledge of MongoDB and Cassandra databases"
+        "description": "Oracle Cloud Certified"
       },
       "tools": {
-        "title": "Development Tools",
-        "description": "Version control and project management with GIT and Github. Visual Studio Code."
+        "title": "Tools",
+        "description": "Git, GitHub, VS Code"
       },
       "linux": {
-        "title": "Linux Operating System",
-        "description": "Experience using and administering Linux environments."
+        "title": "Linux",
+        "description": "System administration"
       },
       "devops": {
         "title": "DevOps",
-        "description": "Knowledge in using containers with Docker for system deployment."
-      },
-      "backend": {
-        "title": "BackEnd",
-        "description": "Knowledge in building server-side applications with Node.js/Express. Creating REST APIs."
+        "description": "Docker containers"
       }
     }
   },
   "timeline": {
     "title": "About Me",
-    "about": "Technology professional working in the market since 1996. Currently I manage the dynamic development unit of the Court of Justice of Ceará, where we apply low-code/no-code technologies combined with business process automation tools. Knowledge in developing Web/Mobile applications with React/Next.js and Tailwind. Using backend with Headless CMS or developed with Node.js/Express. Applying SEO techniques to ensure the client's brand is always highlighted in search results. Knowledge in Cloud platforms and how they can help companies reduce costs in operating their systems, as well as using data exploration services."
+    "subtitle": "25+ year journey in technology, from full-stack foundation to Agentic Engineering specialization.",
+    "about": "Technology professional working in the market since 1996. I started with traditional full-stack development (web, mobile, backend) and over 2 decades evolved to specialize in Agentic Software Engineering.\n\nCurrently I manage the dynamic development unit of the Court of Justice of Ceará, where I lead the transition from low-code/no-code to agent-powered solutions. My expertise combines:\n\n- **Solid Foundation:** 25+ years in full-stack (React, Next.js, Node.js, SQL/NoSQL, Cloud)\n- **Current Specialization:** Focus on multi-agent architectures, Spec-Driven Development, orchestration with LangChain/CrewAI/Flowise\n- **Real Practice:** Open-source framework (Live and Let Code), production-ready projects (neuroHub, social-story)\n- **Leadership:** Development team management in corporate environment\n\nMy approach: agents-first design to solve complex problems with quality and speed."
   },
   "accomplishments": {
     "title": "Academic and Professional Background"
   },
+  "methodology": {
+    "title": "Agentic Development Methodology",
+    "subtitle": "Open-source framework for Spec-Driven Development with specialized agents.",
+    "whatItIs": "Transforms functional specifications into production-ready software through multi-agent orchestration.",
+    "benefitsTitle": "Benefits",
+    "cta": "📖 View on GitHub",
+    "phases": {
+      "phase1": {
+        "title": "Spec Definition",
+        "description": "Clear functional specification with acceptance criteria"
+      },
+      "phase2": {
+        "title": "Agent Orchestration",
+        "description": "Multiple specialized agents (architect, developer, reviewer)"
+      },
+      "phase3": {
+        "title": "Code Generation + Review",
+        "description": "Agent implementation with automated code review"
+      },
+      "phase4": {
+        "title": "Human Refinement",
+        "description": "Human-agent refinement loop for optimization"
+      }
+    },
+    "benefits": {
+      "benefit1": "Consistency: Specs as single source of truth",
+      "benefit2": "Speed: Agents accelerate implementation",
+      "benefit3": "Quality: Automated agent code review",
+      "benefit4": "Flexibility: Human in the loop for complex decisions"
+    }
+  },
   "footer": {
+    "contactTitle": "Let's talk",
+    "contactDescription": "If you need someone to turn complex requirements into AI-powered, multi-agent, production-ready software, let's discuss your context and the next step.",
     "whatsapp": "Whatsapp",
     "email": "E-mail"
   },

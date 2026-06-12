@@ -34,6 +34,15 @@ export const Div2 = styled.div`
   grid-area: 1 / 2 / 2 / 4;
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+  }
+
   @media ${(props) => props.theme.breakpoints.sm} {
     grid-area: 2 / 2 / 3 / 5;
   }
@@ -54,12 +63,23 @@ export const NavLink = styled.a`
   font-size: 2rem;
   line-height: 32px;
   color: rgba(255, 255, 255, 0.75);
-  transition: 0.4s ease;
+  border-radius: 6px;
+  display: inline-flex;
+  padding: 0.4rem 0.6rem;
+  transition: color 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
+
   &:hover {
     color: #fff;
     opacity: 1;
     cursor: pointer;
   }
+
+  &:focus-visible {
+    outline: 2px solid ${(props) => props.theme.colors.agentGreen};
+    outline-offset: 4px;
+    color: #fff;
+  }
+
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: 0.5rem;
   }
@@ -114,16 +134,22 @@ export const NavProductsIcon = styled(IoIosArrowDropdown)`
 // Social Icons
 
 export const SocialIcons = styled.a`
-transition: 0.3s ease;
-color: white;
-target='_blank';
-rel="noopener";
-border-radius: 50px;
+  align-items: center;
+  border-radius: 999px;
+  color: white;
+  display: inline-flex;
+  justify-content: center;
   padding: 8px;
-&:hover {
+  transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+
+  &:hover {
     background-color: #212d45;
     transform: scale(1.2);
     cursor: pointer;
-    
+  }
+
+  &:focus-visible {
+    outline: 2px solid ${(props) => props.theme.colors.agentGreen};
+    outline-offset: 4px;
   }
 `;

@@ -1,0 +1,6 @@
+FOUND: href="/#projects"
+FOUND: href="/#tech"
+FOUND: href="/#about"
+FOUND: aria-label="GitHub de Jaime Correia Neto"
+FOUND: aria-label="Selecionar idioma"
+FOUND: id="about"

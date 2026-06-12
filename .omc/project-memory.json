@@ -1,0 +1,314 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1781188190287,
+  "projectRoot": "E:\\Users\\Desktop\\javascript\\portfolio_website-STARTER",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "next",
+        "version": "12.3.1",
+        "category": "fullstack"
+      },
+      {
+        "name": "react",
+        "version": "17.0.2",
+        "category": "frontend"
+      },
+      {
+        "name": "react-dom",
+        "version": "17.0.2",
+        "category": "frontend"
+      }
+    ],
+    "packageManager": "yarn",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": "yarn build",
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": "yarn dev",
+    "scripts": {
+      "dev": "next dev",
+      "build": "next build && next export",
+      "start": "next start"
+    }
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": "type-based"
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "public",
+      "src"
+    ],
+    "gitBranches": null
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "backlog": {
+      "path": "backlog",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1781188190051,
+      "keyFiles": [
+        "config.yml"
+      ]
+    },
+    "out": {
+      "path": "out",
+      "purpose": "Build output",
+      "fileCount": 4,
+      "lastAccessed": 1781188190052,
+      "keyFiles": [
+        "404.html",
+        "favicon.ico",
+        "index.html",
+        "vercel.svg"
+      ]
+    },
+    "public": {
+      "path": "public",
+      "purpose": "Public files",
+      "fileCount": 2,
+      "lastAccessed": 1781188190080,
+      "keyFiles": [
+        "favicon.ico",
+        "vercel.svg"
+      ]
+    },
+    "src": {
+      "path": "src",
+      "purpose": "Source code",
+      "fileCount": 0,
+      "lastAccessed": 1781188190081,
+      "keyFiles": []
+    },
+    "target": {
+      "path": "target",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1781188190082,
+      "keyFiles": [
+        "npmlist.json"
+      ]
+    },
+    "backlog\\docs": {
+      "path": "backlog\\docs",
+      "purpose": "Documentation",
+      "fileCount": 0,
+      "lastAccessed": 1781188190083,
+      "keyFiles": []
+    },
+    "src\\components": {
+      "path": "src\\components",
+      "purpose": "UI components",
+      "fileCount": 0,
+      "lastAccessed": 1781188190084,
+      "keyFiles": []
+    },
+    "src\\pages": {
+      "path": "src\\pages",
+      "purpose": "Page components",
+      "fileCount": 3,
+      "lastAccessed": 1781188190084,
+      "keyFiles": [
+        "index.js",
+        "_app.js",
+        "_document.js"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "src\\i18n\\translations\\pt.json",
+      "accessCount": 12,
+      "lastAccessed": 1781194685151,
+      "type": "file"
+    },
+    {
+      "path": "src\\i18n\\translations\\en.json",
+      "accessCount": 12,
+      "lastAccessed": 1781194702595,
+      "type": "file"
+    },
+    {
+      "path": "src\\constants\\constants.js",
+      "accessCount": 5,
+      "lastAccessed": 1781192744693,
+      "type": "file"
+    },
+    {
+      "path": "src\\themes\\default.js",
+      "accessCount": 5,
+      "lastAccessed": 1781193306417,
+      "type": "file"
+    },
+    {
+      "path": "src\\components\\Technologies\\Technologies.js",
+      "accessCount": 4,
+      "lastAccessed": 1781193348253,
+      "type": "file"
+    },
+    {
+      "path": "docs\\superpowers\\specs\\2025-01-11-agentic-engineering-portfolio-redesign.md",
+      "accessCount": 3,
+      "lastAccessed": 1781191061813,
+      "type": "file"
+    },
+    {
+      "path": "docs\\superpowers\\plans\\2025-01-11-agentic-engineering-redesign.md",
+      "accessCount": 3,
+      "lastAccessed": 1781191402733,
+      "type": "file"
+    },
+    {
+      "path": "src\\components\\Hero\\Hero.js",
+      "accessCount": 3,
+      "lastAccessed": 1781191920627,
+      "type": "file"
+    },
+    {
+      "path": "src\\components\\Projects\\Projects.js",
+      "accessCount": 3,
+      "lastAccessed": 1781192774981,
+      "type": "file"
+    },
+    {
+      "path": "src\\components\\Projects\\ProjectsStyles.js",
+      "accessCount": 3,
+      "lastAccessed": 1781192799562,
+      "type": "file"
+    },
+    {
+      "path": "src\\pages\\index.js",
+      "accessCount": 3,
+      "lastAccessed": 1781194720313,
+      "type": "file"
+    },
+    {
+      "path": "src\\pages\\_document.js",
+      "accessCount": 2,
+      "lastAccessed": 1781191715696,
+      "type": "file"
+    },
+    {
+      "path": "src\\components\\Hero\\HeroStyles.js",
+      "accessCount": 2,
+      "lastAccessed": 1781191924152,
+      "type": "file"
+    },
+    {
+      "path": "src",
+      "accessCount": 2,
+      "lastAccessed": 1781193318376,
+      "type": "directory"
+    },
+    {
+      "path": "src\\components\\Technologies\\TechnologiesStyles.js",
+      "accessCount": 2,
+      "lastAccessed": 1781193351899,
+      "type": "file"
+    },
+    {
+      "path": "src\\components\\TimeLine\\TimeLine.js",
+      "accessCount": 2,
+      "lastAccessed": 1781194640293,
+      "type": "file"
+    },
+    {
+      "path": "src\\components\\TimeLine\\TimeLineStyles.js",
+      "accessCount": 2,
+      "lastAccessed": 1781194668685,
+      "type": "file"
+    },
+    {
+      "path": "package.json",
+      "accessCount": 1,
+      "lastAccessed": 1781188436078,
+      "type": "file"
+    },
+    {
+      "path": "README.md",
+      "accessCount": 1,
+      "lastAccessed": 1781188436551,
+      "type": "file"
+    },
+    {
+      "path": "src\\layout\\Layout.js",
+      "accessCount": 1,
+      "lastAccessed": 1781189451664,
+      "type": "file"
+    },
+    {
+      "path": "src\\components\\Acomplishments\\Acomplishments.js",
+      "accessCount": 1,
+      "lastAccessed": 1781189453623,
+      "type": "file"
+    },
+    {
+      "path": "src\\styles\\GlobalComponents\\index.js",
+      "accessCount": 1,
+      "lastAccessed": 1781191089451,
+      "type": "file"
+    },
+    {
+      "path": "src\\styles\\GlobalComponents\\Button.js",
+      "accessCount": 1,
+      "lastAccessed": 1781191903872,
+      "type": "file"
+    },
+    {
+      "path": "src\\components\\Methodology\\Methodology.js",
+      "accessCount": 1,
+      "lastAccessed": 1781192394348,
+      "type": "file"
+    },
+    {
+      "path": "src\\components\\Methodology\\MethodologyStyles.js",
+      "accessCount": 1,
+      "lastAccessed": 1781192411667,
+      "type": "file"
+    },
+    {
+      "path": "",
+      "accessCount": 1,
+      "lastAccessed": 1781192684624,
+      "type": "directory"
+    },
+    {
+      "path": "src\\components\\Projects\\ProjectCard.js",
+      "accessCount": 1,
+      "lastAccessed": 1781192760915,
+      "type": "file"
+    },
+    {
+      "path": "src\\styles\\GlobalComponents",
+      "accessCount": 1,
+      "lastAccessed": 1781192832324,
+      "type": "directory"
+    },
+    {
+      "path": "src\\components",
+      "accessCount": 1,
+      "lastAccessed": 1781194627854,
+      "type": "directory"
+    }
+  ],
+  "userDirectives": []
+}

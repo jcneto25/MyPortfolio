@@ -1,133 +1,85 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-export const ImageContainer = styled.div`
-  text-align: center;
-  background-image: radial-gradient(50% 50% at 50% 50%, rgba(79, 108, 176, 0.25) 53.8%, rgba(79, 108, 176, 0) 100%);
-  width: 100%;
-  padding: 60px;
-  margin-top: 48px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+export const TechGroup = styled.div`
+  margin: ${props => {
+    if (props.$isPrimary) return '48px 0';
+    if (props.$isSecondary) return '32px 0';
+    return '24px 0';
+  }};
+  padding: 24px;
+  background: ${props => {
+    if (props.$isPrimary) return props.theme.colors.cards;
+    if (props.$isSecondary) return 'rgba(37, 37, 37, 0.5)';
+    return 'transparent';
+  }};
+  border-radius: ${props => props.$isPrimary ? '12px' : '8px'};
+  border: ${props => props.$isPrimary
+    ? `1px solid ${props.theme.colors.borderAgent}`
+    : 'none'};
+`;
 
-  @media ${props => props.theme.breakpoints.lg} {
-    background-image: none;
-    padding: 0;
-    margin-top: 40px;
-  }
-  @media ${props => props.theme.breakpoints.md} {
-    background-image: none;
-    padding: 0;
-    margin-top: 16px;
-  }
-`
-
-export const MainImage = styled.img`
-  width: 100%;
-`
-
-export const List = styled.ul`
-  list-style-type: none;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin: 3rem 0;
-  
-  @media ${props => props.theme.breakpoints.lg}{
-    margin: 64px 0;
-  }
-
-  @media ${props => props.theme.breakpoints.md}{
-    margin: 64px 0;
-    gap: 24px
-  }
-  
-  @media ${props => props.theme.breakpoints.sm}{
-    display: flex;
-    flex-direction: column;
-    margin: 32px 0;
-  }
-`
-
-export const ListContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  @media ${props => props.theme.breakpoints.sm}{
-    display: flex;
-    margin-left: 18px;
-  }
-`
-
-export const ListTitle = styled.h4`
-  font-weight: 700;
-  font-size: 28px;
-  line-height: 32px;
-  letter-spacing: 0.02em;
-  color: #FFFFFF;
-  margin-bottom: 8px;
-
-@media ${props => props.theme.breakpoints.md}{
-  font-size: 24px;
-  line-height: 28px;
-}
-
-@media ${props => props.theme.breakpoints.sm}{
+export const TechGroupTitle = styled.h3`
   font-size: 20px;
-  line-height: 28px;
-  letter-spacing: 0.02em;
-  margin-bottom: 4px;
-}
-`
+  font-weight: 600;
+  color: ${props => props.theme.colors.textPrimary};
+  margin-bottom: 16px;
+`;
 
-export const ListParagraph = styled.p`
-  font-size: 18px;
-  line-height: 30px;
-  color: rgba(255, 255, 255, 0.75);
+export const TechList = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
 
-  @media ${props => props.theme.breakpoints.md}{
-    font-size: 16px;
-    line-height: 28px;
+  @media ${(props) => props.theme.breakpoints.md} {
+    grid-template-columns: 1fr;
   }
+`;
 
-  @media ${props => props.theme.breakpoints.sm}{
-    font-size: 14px;
-    line-height: 22px;
-  }
-`
-
-export const ListItem = styled.li`
-  max-width: 320px;
+export const TechItem = styled.div`
   display: flex;
-  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: ${props => props.theme.colors.secondary};
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
 
-@media ${props => props.theme.breakpoints.md}{
-  max-width: 203px;
-}
-
-@media ${props => props.theme.breakpoints.sm}{
-  margin-bottom: 14px;
-  max-width: 320px;
-  flex-direction: row;
-}
-`
-
-export const ListIcon = styled.img`
-  display: block;
-  width: 48px;
-  height: 48px;
-  margin-bottom: 10px;
-  
-  @media ${props => props.theme.breakpoints.md}{
-    width: 40px;
-    height: 40px;
-    margin-bottom: 8px;
+  &:hover {
+    background: ${props => props.theme.colors.cards};
   }
+`;
 
-  @media ${props => props.theme.breakpoints.sm}{
-    width: 32px;
-    height: 32px;
-    margin-bottom: 0px;
-  }
-`
+export const TechIcon = styled.div`
+  color: ${props => props.$muted
+    ? props.theme.colors.textMuted
+    : props.theme.colors.agentPurple};
+  flex-shrink: 0;
+`;
+
+export const TechContent = styled.div`
+  flex: 1;
+`;
+
+export const TechItemTitle = styled.div`
+  font-size: 16px;
+  font-weight: 600;
+  color: ${props => props.$muted
+    ? props.theme.colors.textMuted
+    : props.theme.colors.textPrimary};
+  margin-bottom: 4px;
+`;
+
+export const TechItemDesc = styled.div`
+  font-size: 14px;
+  line-height: 1.4;
+  color: ${props => props.$muted
+    ? props.theme.colors.textMuted
+    : props.theme.colors.textSecondary};
+`;
+
+// Keep legacy exports for compatibility
+export const List = TechList;
+export const ListItem = TechItem;
+export const ListContainer = TechContent;
+export const ListParagraph = TechItemDesc;
+export const ListTitle = TechItemTitle;

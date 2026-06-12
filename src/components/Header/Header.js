@@ -21,12 +21,26 @@ import {
 } from "./HeaderStyles";
 
 const Header = () => {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
+  const socialLabels = {
+    github:
+      language === "pt"
+        ? "GitHub de Jaime Correia Neto"
+        : "Jaime Correia Neto on GitHub",
+    linkedin:
+      language === "pt"
+        ? "LinkedIn de Jaime Correia Neto"
+        : "Jaime Correia Neto on LinkedIn",
+    email:
+      language === "pt"
+        ? "Enviar e-mail para Jaime Correia Neto"
+        : "Send an email to Jaime Correia Neto",
+  };
 
   return (
     <Container>
       <Div1>
-        <Link href="/">
+        <Link href="/" passHref legacyBehavior>
           <a
             style={{
               display: "flex",
@@ -41,34 +55,44 @@ const Header = () => {
       </Div1>
       <Div2>
         <li>
-          <Link href="#projetos">
+          <Link href="#projects" passHref legacyBehavior>
             <NavLink>{t('header.nav.projects')}</NavLink>
           </Link>
         </li>
         <li>
-          <Link href="#tech">
+          <Link href="#tech" passHref legacyBehavior>
             <NavLink>{t('header.nav.technologies')}</NavLink>
           </Link>
         </li>
         <li>
-          <Link href="#about">
+          <Link href="#about" passHref legacyBehavior>
             <NavLink>{t('header.nav.about')}</NavLink>
           </Link>
         </li>
       </Div2>
       <Div3>
         <LanguageSwitcher />
-        <SocialIcons href="http://github.com/jcneto25" target="_blank">
-          <AiFillGithub size="3rem" />
+        <SocialIcons
+          href="http://github.com/jcneto25"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={socialLabels.github}
+        >
+          <AiFillGithub size="3rem" aria-hidden="true" />
         </SocialIcons>
         <SocialIcons
           href="https://www.linkedin.com/in/jaime-correia-neto"
           target="_blank"
+          rel="noopener noreferrer"
+          aria-label={socialLabels.linkedin}
         >
-          <AiFillLinkedin size="3rem" />
+          <AiFillLinkedin size="3rem" aria-hidden="true" />
         </SocialIcons>
-        <SocialIcons href="mailto:jcneto25@gmail.com">
-          <AiFillMail size="3rem" />
+        <SocialIcons
+          href="mailto:jcneto25@gmail.com"
+          aria-label={socialLabels.email}
+        >
+          <AiFillMail size="3rem" aria-hidden="true" />
         </SocialIcons>
       </Div3>
     </Container>

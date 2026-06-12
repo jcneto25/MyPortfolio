@@ -2,10 +2,21 @@
   "env": {
     "ANTHROPIC_MODEL": "glm-4.7"
   },
-  "outputStyle": "default",
   "permissions": {
     "allow": [
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(curl -s https://raw.githubusercontent.com/jcneto25/Live-and-Let-Code/main/README.md)",
+      "Bash(curl -s https://raw.githubusercontent.com/jcneto25/neuroHub/main/README.md)",
+      "Bash(curl -s https://raw.githubusercontent.com/jcneto25/social-story/main/README.md)",
+      "Bash(curl -s https://api.github.com/repos/jcneto25/SmartFix-Intelligence/readme)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('src/i18n/translations/pt.json','utf8'\\)\\); console.log\\('pt.json: valid'\\)\")",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('src/i18n/translations/en.json','utf8'\\)\\); console.log\\('en.json: valid'\\)\")",
+      "Bash(npx next *)",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('src/i18n/translations/pt.json','utf8'\\)\\); console.log\\('pt.json valid'\\)\")",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('src/i18n/translations/en.json','utf8'\\)\\); console.log\\('en.json valid'\\)\")"
     ]
-  }
+  },
+  "outputStyle": "default"
 }

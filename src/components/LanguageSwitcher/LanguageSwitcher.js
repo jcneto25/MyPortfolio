@@ -4,22 +4,28 @@ import { LanguageButton, LanguageContainer } from './LanguageSwitcherStyles';
 
 const LanguageSwitcher = () => {
   const { language, setLanguage, t } = useLanguage();
+  const languageSwitcherLabel =
+    language === 'pt' ? 'Selecionar idioma' : 'Select language';
 
   const handleLanguageChange = (newLanguage) => {
     setLanguage(newLanguage);
   };
 
   return (
-    <LanguageContainer>
+    <LanguageContainer role="group" aria-label={languageSwitcherLabel}>
       <LanguageButton
-        active={language === 'pt'}
+        type="button"
+        aria-pressed={language === 'pt'}
+        $active={language === 'pt'}
         onClick={() => handleLanguageChange('pt')}
       >
         {t('header.languageSwitcher.portuguese')}
       </LanguageButton>
-      <span>/</span>
+      <span aria-hidden="true">/</span>
       <LanguageButton
-        active={language === 'en'}
+        type="button"
+        aria-pressed={language === 'en'}
+        $active={language === 'en'}
         onClick={() => handleLanguageChange('en')}
       >
         {t('header.languageSwitcher.english')}
