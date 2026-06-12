@@ -6,6 +6,18 @@ const LanguageContext = createContext();
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
   if (!context) {
+    // During SSR with styled-components' ServerStyleSheet, context can be briefly
+    // unavailable. Return a safe fallback instead of throwing to avoid breaking the
+    // server render — the real provider will hydrate on the client.
+    if (typeof window === 'undefined') {
+      const fallback = {
+        language: i18nConfig.defaultLanguage,
+        setLanguage: () => {},
+        t: (key) => key,
+        isClient: false,
+      };
+      return fallback;
+    }
     throw new Error('useLanguage must be used within a LanguageProvider');
   }
   return context;
