@@ -1,13 +1,62 @@
 import styled from 'styled-components';
 
+export const ImgWrapper = styled.div`
+  cursor: pointer;
+  overflow: hidden;
+
+  &:focus-visible {
+    outline: 2px solid ${props => props.theme.colors.agentPurple};
+    outline-offset: 2px;
+  }
+`;
+
 export const Img = styled.img`
   width: 100%;
   height: auto;
   aspect-ratio: ${props => props.isAgent ? '400 / 220' : '16 / 9'};
-  object-fit: cover;
+  object-fit: ${props => props.containImage ? 'contain' : 'cover'};
   display: block;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.04);
+  transition: transform 0.3s ease;
+
+  ${ImgWrapper}:hover & {
+    transform: scale(1.05);
+  }
+`;
+
+export const Lightbox = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  cursor: pointer;
+  animation: fadeIn 0.2s ease;
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+`;
+
+export const LightboxImg = styled.img`
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+  animation: zoomIn 0.25s ease;
+
+  @keyframes zoomIn {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
 `;
 
 export const BlogCard = styled.div`

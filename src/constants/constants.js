@@ -79,6 +79,7 @@ export const projects = {
       visit: '',
       id: 11,
       isAgentProject: true,
+      containImage: true,
     },
     {
       title: 'neuroHub',
@@ -174,6 +175,7 @@ export const projects = {
       visit: '',
       id: 11,
       isAgentProject: true,
+      containImage: true,
     },
     {
       title: 'neuroHub',
