@@ -37,15 +37,12 @@
     "outcomeLabel": "Resultado"
   },
   "technologies": {
-    "title": "Stack Tecnológico Agent-First",
-    "subtitle": "Tecnologias organizadas por camadas — IA/Agentes como core, full-stack como suporte",
-    "coreTitle": "🤖 Agent Orchestration & LLMs",
-    "methodsTitle": "⚡ Agentic Development Methods",
-    "foundationTitle": "🛠️ Full-Stack Foundation",
-    "core": {
-      "agentFrameworks": {
-        "title": "Agent Frameworks",
-        "description": "LangChain, CrewAI, Flowise"
+    "title": "Tecnologias",
+    "subtitle": "Um resumo das tecnologias com as quais trabalho.",
+    "items": {
+      "ai": {
+        "title": "Inteligência Artificial",
+        "description": "Conhecimento na construção de arquitetura de LLMs. Configuração de LLMs em execução local com Ollama. Construção e refinamento de prompts. Criação de Agentes com os principais frameworks do mercado, como: langchain, crewAI e flowise. Construção de fluxo de codificação automatizado com Claude-CLi, Gemini-Cli, Opencode e Github Copilot com técnicas SpecDriven e BMAD. Parelização de agentes com git worktrees"
       },
       "llmTerminals": {
         "title": "LLM Terminals",
