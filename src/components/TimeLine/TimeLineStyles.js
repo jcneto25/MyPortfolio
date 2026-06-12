@@ -15,19 +15,27 @@ export const Boxes = styled.div`
 `
 
 export const Box = styled.div`
-  text-align: center;
+  text-align: left;
   padding: 24px;
   flex: 1 1 calc(33.333% - 24px);
   max-width: calc(33.333% - 16px);
   background: rgba(255, 255, 255, 0.03);
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.2s ease-in-out;
+  transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
 
   &:hover {
     background: rgba(255, 255, 255, 0.06);
     transform: translateY(-3px);
     border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+
+    &:hover {
+      transform: none;
+    }
   }
 
   @media ${props => props.theme.breakpoints.md} {
@@ -50,7 +58,7 @@ export const BoxNum = styled.h4`
   background: linear-gradient(121.57deg, #FFFFFF 10%, rgba(255, 255, 255, 0.66) 30.15%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 
   @media ${props => props.theme.breakpoints.md} {
     font-size: 36px;
@@ -63,16 +71,17 @@ export const BoxNum = styled.h4`
 
 export const BoxText = styled.p`
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.6;
   letter-spacing: 0.02em;
   color: rgba(255, 255, 255, 0.75);
+  margin: 0;
 
   @media ${props => props.theme.breakpoints.md} {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   @media ${props => props.theme.breakpoints.sm} {
-    font-size: 13px;
+    font-size: 14px;
   }
 `
 

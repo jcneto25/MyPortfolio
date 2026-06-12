@@ -13,20 +13,28 @@
     }
   },
   "hero": {
-    "title": "Agentic Software Engineering",
-    "titleHighlight": "Specialist",
-    "description": "I build agent-powered software using Claude CLI, OpenCode, Cursor, Antigravity CLI, and Aider. Specialist in Spec-Driven Development with efficient context management for token optimization. I apply TDD with agents, automated agent code review, human-agent refinement loops, and multi-agent orchestration. Author of Live and Let Code framework — production-ready agentic development methodology with agents-first design.",
+    "title": "Specialist in",
+    "titleHighlight": "Agentic Software Engineering",
+    "description": "I build agent-powered software with multi-agent orchestration and Spec-Driven Development to turn complex requirements into production-ready solutions.",
+    "supportingText": "Open-source framework, real AI projects, and 25+ years of software engineering experience.",
     "buttonResume": "See my Resume",
     "buttonMethodology": "See Methodology",
-    "buttonProjects": "See Agent Projects"
+    "buttonProjects": "See Agent Projects",
+    "proofListLabel": "Key profile credentials",
+    "proofExperience": "25+ years in technology",
+    "proofFramework": "Open-source framework",
+    "proofProjects": "Production-ready AI projects"
   },
   "projects": {
     "title": "Projects",
     "agentSubtitle": "Solutions built with multi-agent architectures",
     "traditionalSubtitle": "Full-Stack Foundation (prior work)",
     "stack": "Stack",
-    "visit": "Visit",
-    "source": "Source"
+    "visit": "Open Project",
+    "source": "View Source",
+    "agentBadge": "Agentic",
+    "architectureLabel": "Architecture",
+    "outcomeLabel": "Outcome"
   },
   "technologies": {
     "title": "Agent-First Tech Stack",
@@ -107,7 +115,7 @@
   },
   "timeline": {
     "title": "About Me",
-    "subtitle": "25+ year journey in technology — from traditional full-stack to Agentic Engineering specialization",
+    "subtitle": "25+ year journey in technology, from full-stack foundation to Agentic Engineering specialization.",
     "about": "Technology professional working in the market since 1996. I started with traditional full-stack development (web, mobile, backend) and over 2 decades evolved to specialize in Agentic Software Engineering.\n\nCurrently I manage the dynamic development unit of the Court of Justice of Ceará, where I lead the transition from low-code/no-code to agent-powered solutions. My expertise combines:\n\n- **Solid Foundation:** 25+ years in full-stack (React, Next.js, Node.js, SQL/NoSQL, Cloud)\n- **Current Specialization:** Focus on multi-agent architectures, Spec-Driven Development, orchestration with LangChain/CrewAI/Flowise\n- **Real Practice:** Open-source framework (Live and Let Code), production-ready projects (neuroHub, social-story)\n- **Leadership:** Development team management in corporate environment\n\nMy approach: agents-first design to solve complex problems with quality and speed."
   },
   "accomplishments": {
@@ -115,7 +123,8 @@
   },
   "methodology": {
     "title": "Agentic Development Methodology",
-    "subtitle": "Open-source framework for Spec-Driven Development with agents. Transforms functional specifications into production-ready code through multi-agent orchestration.",
+    "subtitle": "Open-source framework for Spec-Driven Development with specialized agents.",
+    "whatItIs": "Transforms functional specifications into production-ready software through multi-agent orchestration.",
     "benefitsTitle": "Benefits",
     "cta": "📖 View on GitHub",
     "phases": {
@@ -144,6 +153,8 @@
     }
   },
   "footer": {
+    "contactTitle": "Let's talk",
+    "contactDescription": "If you need someone to turn complex requirements into AI-powered, multi-agent, production-ready software, let's discuss your context and the next step.",
     "whatsapp": "Whatsapp",
     "email": "E-mail"
   },

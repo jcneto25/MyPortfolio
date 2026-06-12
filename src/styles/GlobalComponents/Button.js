@@ -2,9 +2,9 @@ import React from 'react'
 
 import { ButtonBack, ButtonFront } from './index'
 
-const Button = (props) => (
-  <ButtonBack alt={props.alt} form={props.form} disabled={props.disabled}>{props.children}
-    <ButtonFront alt={props.alt} onClick={props.onClick} disabled={props.disabled}>{props.children}</ButtonFront>
+const Button = ({ alt, form, disabled, children, onClick }) => (
+  <ButtonBack $alt={alt} $form={form} disabled={disabled}>{children}
+    <ButtonFront $alt={alt} onClick={onClick} disabled={disabled}>{children}</ButtonFront>
   </ButtonBack>
 );
 

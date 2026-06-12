@@ -40,6 +40,7 @@ const Methodology = () => {
       <SectionDivider />
       <SectionTitle main>{t('methodology.title')}</SectionTitle>
       <SectionSubText>{t('methodology.subtitle')}</SectionSubText>
+      <SectionSubText>{t('methodology.whatItIs')}</SectionSubText>
 
       <PhaseCardsContainer>
         {phases.map((phase) => (
@@ -56,7 +57,7 @@ const Methodology = () => {
       </SectionTitle>
       <BenefitsContainer>
         {benefits.map((benefit) => (
-          <BenefitItem key={benefit.key}>• {t(`methodology.benefits.${benefit.key}`)}</BenefitItem>
+          <BenefitItem key={benefit.key}>{t(`methodology.benefits.${benefit.key}`)}</BenefitItem>
         ))}
       </BenefitsContainer>
 

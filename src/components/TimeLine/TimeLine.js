@@ -8,17 +8,27 @@ import {
 import { Box, Boxes, BoxNum, BoxText } from "./TimeLineStyles";
 import { useLanguage } from "../../contexts/LanguageContext";
 
+const mapRows = (rows = []) =>
+  rows
+    .map((item) => ({
+      number: item.Ano || "",
+      text: item.conquista || "",
+    }))
+    .filter((item) => item.number && item.text);
+
 const Timeline = ({ timelineData }) => {
   const { t, language } = useLanguage();
-  const [data, setData] = useState(timelineData[language] || []);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    setData(timelineData[language] || []);
+    const preferredRows = timelineData?.[language];
+    const fallbackRows = timelineData?.pt?.length ? timelineData.pt : timelineData?.en || [];
+    const mappedData = mapRows(preferredRows?.length ? preferredRows : fallbackRows);
+    setData(mappedData);
   }, [language, timelineData]);
 
   return (
-    <Section>
-      <SectionDivider />
+    <Section id="about">
       <SectionTitle main>{t('timeline.title')}</SectionTitle>
       {t('timeline.subtitle') && (
         <SectionText style={{ fontSize: '18px', maxWidth: '900px', marginBottom: '24px' }}>
@@ -33,6 +43,7 @@ const Timeline = ({ timelineData }) => {
           </Box>
         ))}
       </Boxes>
+      <SectionDivider />
     </Section>
   );
 };

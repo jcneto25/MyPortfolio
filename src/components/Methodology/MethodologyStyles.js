@@ -16,11 +16,19 @@ export const PhaseCard = styled.div`
   border: 2px solid ${props => props.theme.colors.agentPurple};
   border-radius: 12px;
   padding: 24px;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 24px rgba(139, 92, 246, 0.3);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+
+    &:hover {
+      transform: none;
+    }
   }
 `;
 
@@ -81,10 +89,18 @@ export const CTALink = styled.a`
   padding: 16px 32px;
   border-radius: 50px;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 24px rgba(139, 92, 246, 0.5);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+
+    &:hover {
+      transform: none;
+    }
   }
 `;

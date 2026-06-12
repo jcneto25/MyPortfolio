@@ -2,9 +2,12 @@ import styled from 'styled-components';
 
 export const Img = styled.img`
   width: 100%;
-  height: ${props => props.isAgent ? '200px' : '100%'};
+  height: auto;
+  aspect-ratio: ${props => props.isAgent ? '400 / 220' : '16 / 9'};
   object-fit: cover;
+  display: block;
   overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
 `;
 
 export const BlogCard = styled.div`
@@ -16,18 +19,28 @@ export const BlogCard = styled.div`
   };
   box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
   text-align: center;
-  width: ${props => props.isAgent ? '400px' : '350px'};
+  width: 100%;
+  max-width: ${props => props.isAgent ? '400px' : '320px'};
   background: ${props => props.theme.colors.cards};
   overflow: hidden;
-  transition: all 0.3s ease;
+  opacity: ${props => props.isAgent ? 1 : 0.92};
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
 
   &:hover {
     ${props => props.isAgent && 'transform: translateY(-4px);'}
     ${props => props.isAgent && 'box-shadow: 0 8px 24px rgba(139, 92, 246, 0.4);'}
   }
 
+  &:focus-within {
+    border-color: ${props => props.isAgent ? props.theme.colors.agentPurple : props.theme.colors.borderTraditional};
+    box-shadow: ${props => props.isAgent
+      ? '0 8px 24px rgba(139, 92, 246, 0.28)'
+      : '0 6px 18px rgba(0, 0, 0, 0.35)'};
+  }
+
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 100%;
+    max-width: 100%;
   }
 `;
 
@@ -55,14 +68,38 @@ export const Hr = styled.hr`
 
 export const CardInfo = styled.p`
   width: 100%;
-  padding: ${props => props.isAgent ? '0 24px' : '0 50px'};
+  padding: ${props => props.isAgent ? '0 24px' : '0 32px'};
   color: ${props => props.theme.colors.textSecondary};
-  font-size: 14px;
-  line-height: 1.5;
-  text-align: justify;
+  font-size: ${props => props.isAgent ? '15px' : '14px'};
+  line-height: 1.6;
+  text-align: left;
+
+  strong {
+    color: ${props => props.theme.colors.textPrimary};
+    font-weight: 600;
+  }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    padding: .3rem;
+    padding: 0 16px;
+  }
+`;
+
+export const MetaLine = styled.p`
+  width: 100%;
+  padding: ${props => props.isAgent ? '0 24px' : '0 32px'};
+  margin: 0 0 10px;
+  color: ${props => props.theme.colors.textSecondary};
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: left;
+
+  strong {
+    color: ${props => props.isAgent ? props.theme.colors.agentGreen : props.theme.colors.textPrimary};
+    font-weight: 600;
+  }
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    padding: 0 16px;
   }
 `;
 
@@ -74,12 +111,27 @@ export const ExternalLinks = styled.a`
     ? props.theme.gradients.button
     : '#6b3030'};
   border-radius: 8px;
-  transition: 0.3s;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
   text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
 
   &:hover {
     transform: scale(1.05);
   }
+
+  &:focus-visible {
+    outline: 2px solid ${props => props.theme.colors.agentGreen};
+    outline-offset: 3px;
+  }
+`;
+
+export const LinksGroup = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 2.5rem 0;
+  padding: 0 16px;
 `;
 
 export const TagList = styled.ul`
@@ -102,10 +154,10 @@ export const ProjectSection = styled.div`
 
 export const ProjectGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(${props => props.isCompact ? '300px' : '400px'}, 1fr));
-  gap: ${props => props.isCompact ? '16px' : '24px'};
-  padding: ${props => props.isCompact ? '16px' : '24px'};
-  place-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(${props => props.isCompact ? '280px' : '400px'}, 1fr));
+  gap: ${props => props.isCompact ? '24px' : '24px'};
+  padding: 24px;
+  justify-items: ${props => props.isCompact ? 'stretch' : 'center'};
 
   @media ${(props) => props.theme.breakpoints.sm} {
     grid-template-columns: 1fr;

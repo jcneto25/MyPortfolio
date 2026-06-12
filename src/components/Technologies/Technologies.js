@@ -41,7 +41,7 @@ const Technologies = () => {
       </SectionTitle>
       <SectionText>{t('technologies.subtitle')}</SectionText>
 
-      <TechGroup isPrimary>
+      <TechGroup $isPrimary>
         <TechGroupTitle>{t('technologies.coreTitle')}</TechGroupTitle>
         <TechList>
           {coreTechs.map(({ icon, key }) => (
@@ -56,7 +56,7 @@ const Technologies = () => {
         </TechList>
       </TechGroup>
 
-      <TechGroup isSecondary>
+      <TechGroup $isSecondary>
         <TechGroupTitle>{t('technologies.methodsTitle')}</TechGroupTitle>
         <TechList>
           {methods.map(({ icon, key }) => (
@@ -71,15 +71,15 @@ const Technologies = () => {
         </TechList>
       </TechGroup>
 
-      <TechGroup isFoundation>
+      <TechGroup $isFoundation>
         <TechGroupTitle>{t('technologies.foundationTitle')}</TechGroupTitle>
         <TechList>
           {foundation.map(({ icon, key }) => (
             <TechItem key={key}>
-              <TechIcon muted>{icon}</TechIcon>
+              <TechIcon $muted>{icon}</TechIcon>
               <TechContent>
-                <TechItemTitle muted>{t(`technologies.foundation.${key}.title`)}</TechItemTitle>
-                <TechItemDesc muted>{t(`technologies.foundation.${key}.description`)}</TechItemDesc>
+                <TechItemTitle $muted>{t(`technologies.foundation.${key}.title`)}</TechItemTitle>
+                <TechItemDesc $muted>{t(`technologies.foundation.${key}.description`)}</TechItemDesc>
               </TechContent>
             </TechItem>
           ))}

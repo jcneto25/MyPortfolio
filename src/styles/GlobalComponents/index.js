@@ -33,7 +33,7 @@ export const SectionTitle = styled.h2`
   background: linear-gradient(
     121.57deg,
     #ffffff 18.77%,
-    rgba(255, 255, 255, 0.66) 60.15%
+    rgba(139, 92, 246, 0.8) 60.15%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -84,12 +84,7 @@ export const SectionDivider = styled.div`
   width: 64px;
   height: 6px;
   border-radius: 10px;
-  background-color: #fff;
-  background: ${(props) =>
-    props.colorAlt
-      ? "linear-gradient(270deg, #F46737 0%, #945DD6 100%)"
-      : "linear-gradient(270deg, #13ADC7 0%, #945DD6 100%)"};
-
+  background: linear-gradient(270deg, ${props => props.theme.colors.agentPurple} 0%, ${props => props.theme.colors.agentGreen} 100%);
   margin: ${(props) => (props.divider ? "4rem 0" : "")};
 
   @media ${(props) => props.theme.breakpoints.md} {
@@ -135,8 +130,10 @@ export const SecondaryBtn = styled.button`
   margin-bottom: 80px;
   cursor: pointer;
   transition: 0.4s ease;
-  &:focus {
-    outline: none;
+
+  &:focus-visible {
+    outline: 2px solid ${props => props.theme.colors.agentGreen};
+    outline-offset: 3px;
   }
 
   &:hover {
@@ -172,39 +169,34 @@ export const SecondaryBtn = styled.button`
 `;
 
 export const ButtonBack = styled.div`
-  width: ${({ alt }) => (alt ? "280px" : "392px")};
-  height: ${({ alt }) => (alt ? "52px" : "74px")};
+  width: ${({ $alt }) => ($alt ? "200px" : "280px")};
+  height: ${({ $alt }) => ($alt ? "48px" : "56px")};
   border-radius: 70px;
-  font-size: ${({ alt }) => (alt ? "20px" : "24px")};
+  font-size: ${({ $alt }) => ($alt ? "18px" : "20px")};
   font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: ${({ alt, form }) => (alt || form ? "0" : "0 0 60px")};
+  margin: 0 0 32px 0;
   color: #fff;
-  background: ${({ alt }) =>
-    alt
-      ? "linear-gradient(270deg, #ff622e 0%, #B133FF 100%)"
-      : "linear-gradient(270deg, #00DBD8 0%, #B133FF 100%)"};
+  background: ${props => props.theme.gradients.button};
   cursor: pointer;
   transition: 0.7s ease;
   position: relative;
-  padding-left:20px;
+  padding-left: 20px;
   overflow: hidden;
   opacity: ${({ disabled }) => (disabled ? ".5" : "1")};
 
   @media ${(props) => props.theme.breakpoints.md} {
-    width: ${({ alt }) => (alt ? "150px" : "184px")};
-    height: ${({ alt }) => (alt ? "52px" : "48px")};
-    font-size: ${({ alt }) => (alt ? "20px" : "16px")};
-    margin-bottom: ${({ alt }) => (alt ? "10px" : "64px")};
+    width: ${({ $alt }) => ($alt ? "160px" : "220px")};
+    height: ${({ $alt }) => ($alt ? "44px" : "48px")};
+    font-size: ${({ $alt }) => ($alt ? "16px" : "18px")};
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 100%;
-    height: 32px;
+    height: 40px;
     font-size: 14px;
-    margin-bottom: ${({ alt }) => (alt ? "0" : "32px")};
   }
 `;
 
@@ -218,13 +210,10 @@ export const ButtonFront = styled.button`
   left: 0;
   width: 100%;
   height: 100%;
-  background: ${({ alt }) =>
-    alt
-      ? "linear-gradient(270deg, #F46737 0%, #945DD6 100%)"
-      : "linear-gradient(270deg, #13ADC7 0%, #945DD6 100%)"};
+  background: ${props => props.theme.gradients.hero};
   opacity: ${({ disabled }) => (disabled ? ".5" : "1")};
   transition: 0.4s ease;
-  font-size: ${({ alt }) => (alt ? "20px" : "24px")};
+  font-size: ${({ $alt }) => ($alt ? "18px" : "20px")};
   font-weight: 600;
   align-items: center;
   justify-content: center;
@@ -237,8 +226,10 @@ export const ButtonFront = styled.button`
   &:hover {
     opacity: 0;
   }
-  &:focus {
-    outline: none;
+
+  &:focus-visible {
+    outline: 2px solid ${props => props.theme.colors.agentGreen};
+    outline-offset: 3px;
   }
   &:active {
     opacity: 1;
@@ -247,7 +238,7 @@ export const ButtonFront = styled.button`
   }
 
   &:disabled {
-    background: linear-gradient(270deg, #00dbd8 0%, #b133ff 100%);
+    background: linear-gradient(270deg, #8B5CF6 0%, #6D28D9 100%);
     opacity: 0.5;
     box-shadow: inset 0px 2px 1px rgba(46, 49, 55, 0.15),
       inset 0px 0px 4px rgba(20, 20, 55, 0.3);

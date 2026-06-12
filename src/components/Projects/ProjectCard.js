@@ -1,18 +1,48 @@
 import React from 'react';
-import { BlogCard, CardInfo, ExternalLinks, HeaderThree, Hr, Tag, TagList, TitleContent, AgentBadge, Img } from './ProjectsStyles';
+import {
+  AgentBadge,
+  BlogCard,
+  CardInfo,
+  ExternalLinks,
+  HeaderThree,
+  Hr,
+  Img,
+  LinksGroup,
+  MetaLine,
+  Tag,
+  TagList,
+  TitleContent,
+} from './ProjectsStyles';
 
 const ProjectCard = ({ project, isAgent, t }) => {
   return (
     <BlogCard isAgent={isAgent}>
-      {isAgent && <AgentBadge>Agent-Powered</AgentBadge>}
-      <Img src={project.image} alt={project.title} isAgent={isAgent} />
+      {isAgent && <AgentBadge>{t('projects.agentBadge')}</AgentBadge>}
+      <Img
+        src={project.image}
+        alt={project.title}
+        width="400"
+        height="220"
+        loading={isAgent ? 'eager' : 'lazy'}
+        isAgent={isAgent}
+      />
       <TitleContent>
         <HeaderThree main={isAgent} isAgent={isAgent}>{project.title}</HeaderThree>
         <Hr isAgent={isAgent} />
       </TitleContent>
       <CardInfo isAgent={isAgent}>
-        {project.description}
+        <strong>{project.description}</strong>
       </CardInfo>
+      {project.architecture && (
+        <MetaLine isAgent={isAgent}>
+          <strong>{t('projects.architectureLabel')}:</strong> {project.architecture}
+        </MetaLine>
+      )}
+      {project.outcome && (
+        <MetaLine isAgent={isAgent}>
+          <strong>{t('projects.outcomeLabel')}:</strong> {project.outcome}
+        </MetaLine>
+      )}
       <div>
         <TitleContent>
           {t('projects.stack')}
@@ -23,16 +53,30 @@ const ProjectCard = ({ project, isAgent, t }) => {
           ))}
         </TagList>
       </div>
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', margin: '2.5rem 0' }}>
-        <ExternalLinks href={project.source} target="_blank" rel="noopener noreferrer" isAgent={isAgent}>
-          {t('projects.source')}
-        </ExternalLinks>
+      <LinksGroup>
+        {project.source && (
+          <ExternalLinks
+            href={project.source}
+            target="_blank"
+            rel="noopener noreferrer"
+            isAgent={isAgent}
+            aria-label={`${project.ctaLabel || t('projects.source')} - ${project.title}`}
+          >
+            {project.ctaLabel || t('projects.source')}
+          </ExternalLinks>
+        )}
         {project.visit && (
-          <ExternalLinks href={project.visit} target="_blank" rel="noopener noreferrer" isAgent={isAgent}>
+          <ExternalLinks
+            href={project.visit}
+            target="_blank"
+            rel="noopener noreferrer"
+            isAgent={isAgent}
+            aria-label={`${t('projects.visit')} - ${project.title}`}
+          >
             {t('projects.visit')}
           </ExternalLinks>
         )}
-      </div>
+      </LinksGroup>
     </BlogCard>
   );
 };

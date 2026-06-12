@@ -55,6 +55,14 @@ export const LanguageProvider = ({ children }) => {
     }
   };
 
+  useEffect(() => {
+    if (typeof document === 'undefined') {
+      return;
+    }
+
+    document.documentElement.lang = language === 'pt' ? 'pt-BR' : 'en';
+  }, [language]);
+
   const t = useMemo(() => {
     return (key) => {
       const keys = key.split('.');
