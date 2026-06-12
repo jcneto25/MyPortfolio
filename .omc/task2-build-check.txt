@@ -1,0 +1,49 @@
+
+> portfolio_nextjs@0.1.0 build
+> next build && next export
+
+info  - Loaded env from E:\Users\Desktop\javascript\portfolio_website-STARTER\.env.local
+info  - Loaded env from E:\Users\Desktop\javascript\portfolio_website-STARTER\.env
+info  - Linting and checking validity of types...
+info  - Creating an optimized production build...
+info  - Disabled SWC as replacement for Babel because of custom Babel configuration ".babelrc" https://nextjs.org/docs/messages/swc-disabled
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+info  - Using external babel configuration from E:\Users\Desktop\javascript\portfolio_website-STARTER\.babelrc
+info  - Compiled successfully
+info  - Collecting page data...
+info  - Generating static pages (0/3)
+info  - Generating static pages (3/3)
+info  - Finalizing page optimization...
+
+Route (pages)                              Size     First Load JS
+Ôöî ÔùÅ / (ISR: 60 Seconds) (1518 ms)          29.1 kB         124 kB
+Ôö£   /_app                                  0 B              95 kB
+Ôö£ Ôùï /404                                   1.48 kB        96.4 kB
+Ôöö ╬╗ /api/hello                             0 B              95 kB
++ First Load JS shared by all              95 kB
+  Ôö£ chunks/framework-e70c6273bfe3f237.js   42.1 kB
+  Ôö£ chunks/main-9b8ff89d405671fe.js        29.6 kB
+  Ôö£ chunks/pages/_app-b143cc5038666515.js  21.7 kB
+  Ôöö chunks/webpack-8b5f21922ee316ac.js     1.62 kB
+
+╬╗  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
+Ôùï  (Static)  automatically rendered as static HTML (uses no initial props)
+ÔùÅ  (SSG)     automatically generated as static HTML + JSON (uses getStaticProps)
+   (ISR)     incremental static regeneration (uses revalidate in getStaticProps)
+
+info  - Loaded env from E:\Users\Desktop\javascript\portfolio_website-STARTER\.env.local
+info  - Loaded env from E:\Users\Desktop\javascript\portfolio_website-STARTER\.env
+info  - using build directory: E:\Users\Desktop\javascript\portfolio_website-STARTER\.next
+info  - Copying "static build" directory
+info  - No "exportPathMap" found in "undefined". Generating map from "./pages"
+info  - Launching 3 workers
+warn  - Statically exporting a Next.js application via `next export` disables API routes.
+This command is meant for static-only hosts, and is not necessary to make your application static.
+Pages in your application without server-side data dependencies will be automatically statically exported by `next build`, including pages powered by `getStaticProps`.
+Learn more: https://nextjs.org/docs/messages/api-routes-static-export
+info  - Exporting (0/3)
+info  - Copying "public" directory
+info  - Exporting (3/3)
+Export successful. Files written to E:\Users\Desktop\javascript\portfolio_website-STARTER\out
