@@ -62,12 +62,15 @@ Projects stored in `src/constants/constants.js` as array with structure:
 ```
 
 #### Dynamic Data (Timeline)
-Timeline data fetched from Baserow via `getStaticProps` in `src/pages/index.js`:
+Timeline and accomplishments data fetched from Baserow via `getStaticProps` in `src/pages/index.js`:
 - Uses native `fetch` (not baserow-client library despite being in dependencies)
 - Environment variables:
   - `NEXT_PUBLIC_BASEROW_API_TOKEN` - Authorization token
   - `NEXT_PUBLIC_BASEROW_HOST` - API URL (default: `https://api.baserow.io`)
-  - `NEXT_PUBLIC_BASEROW_TABLE_ID` - Timeline table ID
+  - `NEXT_PUBLIC_BASEROW_TIMELINE_TABLE_PT_ID` - Timeline table ID for Portuguese
+  - `NEXT_PUBLIC_BASEROW_TIMELINE_TABLE_EN_ID` - Timeline table ID for English
+  - `NEXT_PUBLIC_BASEROW_ACCOMPLISHMENTS_TABLE_PT_ID` - Accomplishments table ID for Portuguese
+  - `NEXT_PUBLIC_BASEROW_ACCOMPLISHMENTS_TABLE_EN_ID` - Accomplishments table ID for English
 - Graceful fallback: Returns empty array on fetch failure
 - ISR revalidation: 60 seconds
 
@@ -99,8 +102,14 @@ Create `.env.local` with:
 ```
 NEXT_PUBLIC_BASEROW_API_TOKEN=your_token_here
 NEXT_PUBLIC_BASEROW_HOST=https://api.baserow.io
-NEXT_PUBLIC_BASEROW_TABLE_ID=your_table_id
+NEXT_PUBLIC_BASEROW_DATABASE_ID=your_database_id
+NEXT_PUBLIC_BASEROW_TIMELINE_TABLE_PT_ID=your_timeline_pt_table_id
+NEXT_PUBLIC_BASEROW_TIMELINE_TABLE_EN_ID=your_timeline_en_table_id
+NEXT_PUBLIC_BASEROW_ACCOMPLISHMENTS_TABLE_PT_ID=your_accomplishments_pt_table_id
+NEXT_PUBLIC_BASEROW_ACCOMPLISHMENTS_TABLE_EN_ID=your_accomplishments_en_table_id
 ```
+
+`.env.local` overrides `.env`. Keep real secrets out of `.env.example`.
 
 ### Content Language
 Site content is in Portuguese (Brazilian audience). Timeline data from Baserow uses field names "Ano" (year) and "conquista" (achievement).

@@ -7,7 +7,7 @@ import Timeline from '../components/TimeLine/TimeLine';
 import { Layout } from '../layout/Layout';
 import { Section } from '../styles/GlobalComponents';
 
-const Home = ({ timelineData }) => {
+const Home = ({ timelineData, accomplishmentsData }) => {
   return (
     <Layout>
       <Section grid>
@@ -17,17 +17,42 @@ const Home = ({ timelineData }) => {
       <Projects />
       <Technologies />
       <Timeline timelineData={timelineData} />
-      <Acomplishments />
+      <Acomplishments accomplishmentsData={accomplishmentsData} />
     </Layout>
   );
+};
+
+const fetchBaserowRows = async ({ host, token, tableId, label }) => {
+  if (!tableId) {
+    console.warn(`Baserow table ID missing for ${label}.`);
+    return [];
+  }
+
+  const response = await fetch(
+    `${host}/api/database/rows/table/${tableId}/?user_field_names=true`,
+    {
+      headers: {
+        Authorization: `Token ${token}`,
+      },
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch ${label} from Baserow: ${response.statusText}`);
+  }
+
+  const data = await response.json();
+  return data.results || [];
 };
 
 export async function getStaticProps() {
   const {
     NEXT_PUBLIC_BASEROW_API_TOKEN,
     NEXT_PUBLIC_BASEROW_HOST,
-    NEXT_PUBLIC_BASEROW_TABLE_ID,
-    NEXT_PUBLIC_BASEROW_TABLE_EN_ID,
+    NEXT_PUBLIC_BASEROW_TIMELINE_TABLE_PT_ID,
+    NEXT_PUBLIC_BASEROW_TIMELINE_TABLE_EN_ID,
+    NEXT_PUBLIC_BASEROW_ACCOMPLISHMENTS_TABLE_PT_ID,
+    NEXT_PUBLIC_BASEROW_ACCOMPLISHMENTS_TABLE_EN_ID,
   } = process.env;
 
   if (!NEXT_PUBLIC_BASEROW_API_TOKEN) {
@@ -35,42 +60,53 @@ export async function getStaticProps() {
     return {
       props: {
         timelineData: { pt: [], en: [] },
+        accomplishmentsData: { pt: [], en: [] },
       },
     };
   }
 
   try {
-    const [ptResponse, enResponse] = await Promise.all([
-      fetch(
-        `${NEXT_PUBLIC_BASEROW_HOST}/api/database/rows/table/${NEXT_PUBLIC_BASEROW_TABLE_ID}/?user_field_names=true`,
-        {
-          headers: {
-            Authorization: `Token ${NEXT_PUBLIC_BASEROW_API_TOKEN}`,
-          },
-        }
-      ),
-      NEXT_PUBLIC_BASEROW_TABLE_EN_ID ? fetch(
-        `${NEXT_PUBLIC_BASEROW_HOST}/api/database/rows/table/${NEXT_PUBLIC_BASEROW_TABLE_EN_ID}/?user_field_names=true`,
-        {
-          headers: {
-            Authorization: `Token ${NEXT_PUBLIC_BASEROW_API_TOKEN}`,
-          },
-        }
-      ) : null
+    const [
+      timelinePtRows,
+      timelineEnRows,
+      accomplishmentsPtRows,
+      accomplishmentsEnRows,
+    ] = await Promise.all([
+      fetchBaserowRows({
+        host: NEXT_PUBLIC_BASEROW_HOST,
+        token: NEXT_PUBLIC_BASEROW_API_TOKEN,
+        tableId: NEXT_PUBLIC_BASEROW_TIMELINE_TABLE_PT_ID,
+        label: 'timeline (pt)',
+      }),
+      fetchBaserowRows({
+        host: NEXT_PUBLIC_BASEROW_HOST,
+        token: NEXT_PUBLIC_BASEROW_API_TOKEN,
+        tableId: NEXT_PUBLIC_BASEROW_TIMELINE_TABLE_EN_ID,
+        label: 'timeline (en)',
+      }),
+      fetchBaserowRows({
+        host: NEXT_PUBLIC_BASEROW_HOST,
+        token: NEXT_PUBLIC_BASEROW_API_TOKEN,
+        tableId: NEXT_PUBLIC_BASEROW_ACCOMPLISHMENTS_TABLE_PT_ID,
+        label: 'accomplishments (pt)',
+      }),
+      fetchBaserowRows({
+        host: NEXT_PUBLIC_BASEROW_HOST,
+        token: NEXT_PUBLIC_BASEROW_API_TOKEN,
+        tableId: NEXT_PUBLIC_BASEROW_ACCOMPLISHMENTS_TABLE_EN_ID,
+        label: 'accomplishments (en)',
+      }),
     ]);
-
-    if (!ptResponse.ok) {
-      throw new Error(`Failed to fetch Portuguese data from Baserow: ${ptResponse.statusText}`);
-    }
-
-    const ptData = await ptResponse.json();
-    const enData = enResponse && enResponse.ok ? await enResponse.json() : null;
 
     return {
       props: {
         timelineData: {
-          pt: ptData.results || [],
-          en: enData?.results || []
+          pt: timelinePtRows,
+          en: timelineEnRows,
+        },
+        accomplishmentsData: {
+          pt: accomplishmentsPtRows,
+          en: accomplishmentsEnRows,
         },
       },
       revalidate: 60,
@@ -80,6 +116,7 @@ export async function getStaticProps() {
     return {
       props: {
         timelineData: { pt: [], en: [] },
+        accomplishmentsData: { pt: [], en: [] },
       },
     };
   }
