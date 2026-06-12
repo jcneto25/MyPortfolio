@@ -10,7 +10,7 @@ export const FooterWrapper = styled.footer`
 
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: 0 16px 48px;
-    width: calc(100vw - 32px);
+    width: 100%;
   }
 `;
 
@@ -24,6 +24,22 @@ export const ContactIntro = styled.div`
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: 28px 0 20px;
     gap: 10px;
+  }
+`;
+
+export const FooterHeading = styled.h3`
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  color: ${props => props.theme.colors.textPrimary};
+  margin: 0;
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    font-size: 30px;
+  }
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    font-size: 24px;
   }
 `;
 
@@ -97,6 +113,7 @@ export const LinkItem = styled.a`
   width: fit-content;
   max-width: 100%;
   margin-top: 14px;
+  min-height: 48px;
   color: ${(props) => props.theme.colors.textPrimary};
   font-size: 18px;
   line-height: 30px;

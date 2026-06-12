@@ -6,6 +6,7 @@ import {
   ContactDetails,
   ContactIcon,
   ContactIntro,
+  FooterHeading,
   FooterWrapper,
   LinkColumn,
   LinkItem,
@@ -20,7 +21,7 @@ const Footer = () => {
   return (
     <FooterWrapper id="contact">
       <ContactIntro>
-        <LinkTitle>{t('footer.contactTitle')}</LinkTitle>
+        <FooterHeading>{t('footer.contactTitle')}</FooterHeading>
         <Slogan>{t('footer.contactDescription')}</Slogan>
       </ContactIntro>
       <LinkList>
@@ -54,3 +55,4 @@ const Footer = () => {
 };
 
 export default Footer;
+ Footer;

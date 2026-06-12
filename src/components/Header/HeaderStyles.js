@@ -12,7 +12,7 @@ export const Container = styled.div`
   @media ${(props) => props.theme.breakpoints.sm} {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 60px);
+    grid-template-rows: repeat(2, auto);
     grid-column-gap: 0.5rem;
     grid-row-gap: 0.5rem;
   }
@@ -27,7 +27,7 @@ export const Div1 = styled.div`
   flex-direction: row;
   align-content: center;
   @media ${(props) => props.theme.breakpoints.sm} {
-    grid-area: 1 / 1 / 2 / 3;
+    grid-area: 1 / 1 / 2 / 4;
   }
 `;
 export const Div2 = styled.div`
@@ -44,7 +44,7 @@ export const Div2 = styled.div`
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    grid-area: 2 / 2 / 3 / 5;
+    grid-area: 2 / 1 / 3 / 4;
   }
 `;
 export const Div3 = styled.div`
@@ -54,7 +54,7 @@ export const Div3 = styled.div`
   align-items: center;
   @media ${(props) => props.theme.breakpoints.sm} {
     align-items: center;
-    grid-area: 1 / 4 / 2 / 6;
+    grid-area: 3 / 1 / 4 / 4;
   }
 `;
 
@@ -98,9 +98,6 @@ export const ContactDropDown = styled.button`
   cursor: pointer;
   transition: 0.3s ease;
 
-  &:focus {
-    outline: none;
-  }
   &:hover {
     color: #fff;
   }
@@ -139,6 +136,8 @@ export const SocialIcons = styled.a`
   color: white;
   display: inline-flex;
   justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
   padding: 8px;
   transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
 

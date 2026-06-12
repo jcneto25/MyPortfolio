@@ -196,8 +196,8 @@ export const CarouselItemText = styled.p`
     padding-right: 32px;
   }
   @media ${props => props.theme.breakpoints.sm} {
-    font-size: 10px;
-    line-height: 16px;
+    font-size: 12px;
+    line-height: 18px;
     padding-right: 0;
   }
 `
@@ -224,9 +224,6 @@ export const CarouselButton = styled.button`
   opacity: ${(props) => props.active === props.index ? `1` : `.33`};
   transform: ${(props) => props.active === props.index ? `scale(1.6)` : `scale(1)`};
 
-  &:focus {
-    outline: none;
-  }
 `
 
 export const CarouselButtonDot = styled.div`
@@ -238,21 +235,36 @@ export const CarouselButtonDot = styled.div`
 `
 
 export const AboutSection = styled.div`
-  max-width: 1040px; /* Match the width of CarouselContainer */
-  margin: 0 auto; /* Center the section */
-  padding: 32px 0; /* Add some padding */
-  font-size: 20px; /* Increase font size */
-  line-height: 1.8; /* Improve readability */
-  color: rgba(255, 255, 255, 0.75); /* Match the text color */
-  text-align: left; /* Align text to the left */
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 32px 0;
+  font-size: 20px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: left;
 
   @media ${(props) => props.theme.breakpoints.md} {
-    font-size: 18px; /* Adjust font size for medium screens */
+    font-size: 18px;
     line-height: 1.6;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    font-size: 16px; /* Adjust font size for small screens */
+    font-size: 16px;
     line-height: 1.4;
+  }
+`;
+
+export const EmptyState = styled.p`
+  width: 100%;
+  max-width: 1040px;
+  text-align: center;
+  padding: 48px 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 18px;
+  margin: 0 auto;
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    font-size: 16px;
+    padding: 32px 0;
   }
 `;

@@ -20,15 +20,17 @@ export const LanguageButton = styled.button`
   background: none;
   border: none;
   border-radius: 6px;
-  color: ${(props) => (props.$active ? '#13ADC7' : 'rgba(255, 255, 255, 0.5)')};
+  color: ${(props) => (props.$active ? props.theme.colors.accentTeal : 'rgba(255, 255, 255, 0.5)')};
   font-weight: ${(props) => (props.$active ? '600' : '400')};
   cursor: pointer;
+  min-height: 44px;
+  min-width: 44px;
   padding: 0.3rem 0.5rem;
   transition: color 0.2s ease, background-color 0.2s ease;
   font-size: 1.4rem;
 
   &:hover {
-    color: #13ADC7;
+    color: ${(props) => props.theme.colors.accentTeal};
   }
 
   &:focus-visible {
@@ -39,5 +41,7 @@ export const LanguageButton = styled.button`
 
   @media ${(props) => props.theme.breakpoints.sm} {
     font-size: 1.2rem;
+    min-height: 44px;
+    min-width: 44px;
   }
 `;
