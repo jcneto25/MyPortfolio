@@ -5,21 +5,26 @@ export const Section = styled.section`
   flex-direction: ${(props) => (props.row ? "row" : "column")};
   padding: ${(props) => (props.nopadding ? "0" : "32px 48px 0")};
   margin: 0 auto;
+  width: 100%;
   max-width: 1040px;
-  box-sizing: content-box;
+  min-width: 0;
+  box-sizing: border-box;
   position: relative;
-  overflow: hidden;
-  grid-template-columns: 1fr 1fr;
+  overflow: visible;
+  grid-template-columns: minmax(0, 1fr);
 
-  @media ${(props) => props.theme.breakpoints.md} {
-    padding: 24px 48px 0;
+  > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  @media ${(props) => props.theme.breakpoints.lg} {
+    padding: ${(props) => (props.nopadding ? "0" : "24px 32px 0")};
     flex-direction: column;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: ${(props) => (props.nopadding ? "0" : "16px 16px 0")};
-    width: 100%;
-    max-width: 100%;
     flex-direction: column;
   }
 `;
@@ -28,8 +33,9 @@ export const SectionTitle = styled.h2`
   font-weight: 800;
   font-size: ${(props) => (props.main ? "65px" : "56px")};
   line-height: ${(props) => (props.main ? "72px" : "56px")};
-  width: max-content;
+  width: 100%;
   max-width: 100%;
+  overflow-wrap: break-word;
   background: linear-gradient(
     121.57deg,
     #ffffff 18.77%,

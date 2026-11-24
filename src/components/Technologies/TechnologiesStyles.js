@@ -27,7 +27,7 @@ export const TechGroupTitle = styled.h3`
 
 export const TechList = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
   gap: 16px;
 
   @media ${(props) => props.theme.breakpoints.md} {

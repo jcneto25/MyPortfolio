@@ -94,10 +94,10 @@ export const CarouselContainer = styled.ul`
   justify-content: space-between; 
   /* overflow-x: hidden; */
 
-  margin-left: 32px;
-  &:first-of-type{
-    margin-left: 0px;
-  }
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin-left: 0;
 
   margin-bottom: 80px;
 
@@ -108,7 +108,7 @@ export const CarouselContainer = styled.ul`
    }
 
   @media ${props => props.theme.breakpoints.sm} {
-    overflow-x: scroll;
+    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
     touch-action: pan-x;
@@ -119,7 +119,7 @@ export const CarouselContainer = styled.ul`
 export const CarouselMobileScrollNode = styled.div`
   @media ${props => props.theme.breakpoints.sm} {
     display: flex;
-    min-width: ${({ final }) => final ? `120%;` : `min-content`}
+    min-width: ${({ final }) => final ? `100%` : `min-content`};
   }
 `
 

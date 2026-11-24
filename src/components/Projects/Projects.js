@@ -13,7 +13,7 @@ const Projects = () => {
   const traditionalProjects = currentProjects.filter(p => !p.isAgentProject);
 
   return (
-    <Section nopadding id='projects'>
+    <Section id="projects">
       <SectionDivider />
       <SectionTitle main>{t('projects.title')}</SectionTitle>
 

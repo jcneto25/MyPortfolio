@@ -3,18 +3,24 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 2rem;
-  padding: 1rem;
-  padding-top: 2rem;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 1.6rem;
+  row-gap: 1.2rem;
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 2rem 48px 0;
+  box-sizing: border-box;
+
+  @media ${(props) => props.theme.breakpoints.lg} {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: stretch;
+    padding: 1.6rem 32px 0;
+  }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, auto);
-    grid-column-gap: 0.5rem;
-    grid-row-gap: 0.5rem;
+    padding: 1.6rem 16px 0;
   }
 `;
 export const Span = styled.span`
@@ -22,39 +28,44 @@ export const Span = styled.span`
 `;
 
 export const Div1 = styled.div`
-  grid-area: 1 / 1 / 2 / 2;
   display: flex;
   flex-direction: row;
-  align-content: center;
-  @media ${(props) => props.theme.breakpoints.sm} {
-    grid-area: 1 / 1 / 2 / 4;
+  align-items: center;
+  min-width: 0;
+
+  a {
+    min-width: 0;
   }
 `;
 export const Div2 = styled.div`
-  grid-area: 1 / 2 / 2 / 4;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 8px;
   list-style: none;
   margin: 0;
   padding: 0;
+  min-width: 0;
 
   li {
     list-style: none;
   }
 
-  @media ${(props) => props.theme.breakpoints.sm} {
-    grid-area: 2 / 1 / 3 / 4;
+  @media ${(props) => props.theme.breakpoints.lg} {
+    justify-content: flex-start;
   }
 `;
 export const Div3 = styled.div`
-  grid-area: 1 / 5 / 2 / 6;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
-  @media ${(props) => props.theme.breakpoints.sm} {
-    align-items: center;
-    grid-area: 3 / 1 / 4 / 4;
+  flex-wrap: wrap;
+  gap: 4px;
+  min-width: 0;
+
+  @media ${(props) => props.theme.breakpoints.lg} {
+    justify-content: flex-start;
   }
 `;
 
@@ -81,7 +92,10 @@ export const NavLink = styled.a`
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    padding: 0.5rem;
+    align-items: center;
+    min-height: 44px;
+    padding: 8px;
+    font-size: 1.6rem;
   }
 `;
 

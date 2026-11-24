@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const PhaseCardsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
   gap: 24px;
   margin: 32px 0;
 
@@ -54,11 +54,7 @@ export const PhaseDescription = styled.p`
 
 export const BenefitsContainer = styled.div`
   margin: 32px 0;
-  padding: 0 48px;
-
-  @media ${(props) => props.theme.breakpoints.sm} {
-    padding: 0 16px;
-  }
+  min-width: 0;
 `;
 
 export const BenefitItem = styled.div`

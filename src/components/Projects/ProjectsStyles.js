@@ -203,14 +203,15 @@ export const ProjectSection = styled.div`
 
 export const ProjectGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(${props => props.isCompact ? '280px' : '400px'}, 1fr));
-  gap: ${props => props.isCompact ? '24px' : '24px'};
-  padding: 24px;
-  justify-items: ${props => props.isCompact ? 'stretch' : 'center'};
+  grid-template-columns: repeat(auto-fill, minmax(${props => props.isCompact ? 'min(100%, 280px)' : 'min(100%, 320px)'}, 1fr));
+  gap: 24px;
+  padding: 24px 0;
+  min-width: 0;
+  justify-items: stretch;
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    grid-template-columns: 1fr;
-    padding: 16px;
+    grid-template-columns: minmax(0, 1fr);
+    padding: 16px 0;
   }
 `;
 

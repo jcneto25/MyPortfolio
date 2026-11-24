@@ -38,12 +38,9 @@ export const Box = styled.div`
   }
 
   @media ${props => props.theme.breakpoints.sm} {
-    height: 110px;
+    height: auto;
+    min-height: 110px;
     padding: 12px;
-    
-    &:nth-child(2n){
-      grid-row:2;
-    }
   }
 `
 export const BoxNum = styled.h5`

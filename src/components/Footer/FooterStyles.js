@@ -1,16 +1,19 @@
 import styled from 'styled-components';
 
 export const FooterWrapper = styled.footer`
-  width: calc(100vw - 96px);
+  width: 100%;
   max-width: 1040px;
   padding: 2rem 48px 40px;
   margin: 1rem auto;
-  box-sizing: content-box;
+  box-sizing: border-box;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    padding: 2rem 32px 40px;
+  }
 
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: 0 16px 48px;
-    width: 100%;
   }
 `;
 
